@@ -7,11 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
-    public HeroShoot shoot;
+    
     public HeroStats stats;
-    //public BulletLogic bullets;
-    public Ammo ammo;
-    public GameObject shotgun;
     public Rigidbody2D rb;
     public SceneDirector.Teams team = SceneDirector.Teams.Player;
     public Vector3 startPos;
@@ -20,6 +17,12 @@ public class Hero : MonoBehaviour
     public Collider2D portalCol;
     public SceneDirector director;
     public Timer restartTimer;
+
+    public HeroShoot shoot;
+    public Ammo ammo;
+    public GameObject shotgun;
+    public int bulletsPerShot;
+    public float bulletSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -48,21 +51,14 @@ public class Hero : MonoBehaviour
         restartTimer.endTime = 0.25f;
         restartTimer.currTime = 0f;
         stats = GetComponent<HeroStats>();
+        stats.parent = this;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        var shotSprite = shotgun.GetComponent<SpriteRenderer>();
-        if (Input.GetMouseButtonDown(0)) // Left click
-        {
-            shotSprite.enabled = true;
-        }
-        if(Input.GetMouseButtonUp(0))
-        {
-            shotSprite.enabled = false;
-        }
+        
         MoveHero();
 
         var vecToExit = portalPos - new Vector2(transform.position.x, transform.position.y);
@@ -107,11 +103,11 @@ public class Hero : MonoBehaviour
         var totalVel = rb.velocity;
         if(Input.GetKey(KeyCode.W))
         {
-            totalVel += Vector2.up;
+            totalVel += (Vector2.up * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            totalVel += Vector2.down;
+            totalVel += (Vector2.down * Time.deltaTime);
         }
         else
         {
@@ -120,17 +116,17 @@ public class Hero : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            totalVel += Vector2.left;
+            totalVel += (Vector2.left * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            totalVel += Vector2.right;
+            totalVel += (Vector2.right * Time.deltaTime);
         }
         else
         {
             totalVel.x = 0f;
         }
-        var normalVel = ((totalVel.normalized) * Time.deltaTime) * stats.Speed;
+        var normalVel = (totalVel.normalized) * stats.Speed;
         //var vel = Vector2.Lerp(normalVel, Vector2.zero, .5f);
         //
         //vel.x = (vel.x < 0.25f) ? (0f) : vel.x;

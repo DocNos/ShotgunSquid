@@ -63,6 +63,13 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        currTime = 0;
+        atTime = false;
+
+    }
+
     public void SetEndTime(float _endtime)
     {
         endTime = _endtime;

@@ -16,12 +16,11 @@ using UnityEngine;
 //[RequireComponent(typeof(HeroStats))]
 public class HeroShoot : MonoBehaviour
 {
-    public float ShotCooldown = 1.0f;
-	[HideInInspector]
-    public int BulletsPerShot = 1;
-
+    public float ShotCooldown;
     public Timer shotCooldownTimer;
+    
     public Hero parent;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,12 +62,23 @@ public class HeroShoot : MonoBehaviour
         var vecToMouse = worldMousePos - transform.position;
         var angle = Mathf.Atan(transform.up.y / transform.up.x);
         var rotate = transform.rotation.eulerAngles.z;
-
+        
+        var shotSprite = parent.shotgun.GetComponent<SpriteRenderer>();
         if (shotCooldownTimer.atTime && Input.GetMouseButton(0))
         {
-			parent.ammo.Shoot(SceneDirector.Teams.Player, normalDir);
-            shotCooldownTimer.currTime = 0.0f;
+            // TODO: Disable shotgun sprite on a timer
+            if (shotSprite.enabled == false) // Left click
+            {
+                shotSprite.enabled = true;
+            }
+            
+            parent.ammo.Shoot(SceneDirector.Teams.Player, normalDir);
+            shotCooldownTimer.Reset();
             shotCooldownTimer.doUpdate = true;
+        }
+        else if(shotSprite.enabled == true)
+        {
+            shotSprite.enabled = false;
         }
     }
 

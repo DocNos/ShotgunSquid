@@ -68,8 +68,10 @@ public class Ammo : MonoBehaviour
             Vector3 playerVel = parent.rb.velocity;
             var  bulletSpawn = trans.position;
             bulletSpawn.z = 0;
-            shotAngle *= 10;
+
+            var bulletVelocity = shotAngle * parent.bulletSpeed;
             
+            // Create origin bullet
             var centerBullet =
                 Instantiate(bulletPrefab
                 , new Vector3(bulletSpawn.x, bulletSpawn.y, bulletSpawn.z - 0.5f)
@@ -79,19 +81,40 @@ public class Ammo : MonoBehaviour
             bulletComp.RB =  centerBullet.GetComponent<Rigidbody2D>();
             bulletComp.team = team;
             bulletComp.BulletRangeLeft = bulletComp.BulletRange;
-            bulletComp.RB.velocity = (playerVel + shotAngle);
+            bulletComp.RB.velocity = (playerVel + bulletVelocity);
 
 
-            var numBullets = 6;
+            var numBullets = parent.bulletsPerShot;
+            // Origin angle
             var startAngle = Mathf.Atan(shotAngle.y / shotAngle.x);
+            if(startAngle < 0)
+            {
+                startAngle = Mathf.Abs(startAngle);
+                if(shotAngle.x < 0 && shotAngle.y > 0)
+                {
+                    startAngle += (Mathf.PI / 2);
+                }
+                if(shotAngle.x < 0 && shotAngle.y < 0)
+                {
+                    startAngle += (Mathf.PI);
+                }
+                if (shotAngle.y < 0 && shotAngle.x > 0)
+                {
+                    startAngle += (3 * Mathf.PI / 2);
+                }
+            }
             // Half circle, split among bullets and centered on 
             // initial shot angle. 
             var angleDivision = (((Mathf.PI/2)) / numBullets) ;
             for (int i = 1; i <= numBullets / 2; ++i)
-            {                
-                var angleCW = angleDivision * i;
+            {             
+                // Increment by this angle on the half-circle
+                var angleCW = (angleDivision * i) + startAngle;
+                // Decompose shot angle vector
                 var x0 = Mathf.Cos(angleCW + shotAngle.x) + bulletSpawn.x; // Needs radius
                 var y0 = Mathf.Sin(angleCW + shotAngle.y) + bulletSpawn.y;
+                
+                // Create bullet wrapping clockwise from origin \\
                 var bulletCW =
                 Instantiate(bulletPrefab
                 , new Vector3(x0, y0, bulletSpawn.z - 0.5f)
@@ -99,14 +122,23 @@ public class Ammo : MonoBehaviour
                 bulletCW.transform.rotation = parent.transform.rotation;
                 var bulletCompCW = bulletCW.GetComponent<Bullet>();
                 bulletCompCW.RB = bulletCW.GetComponent<Rigidbody2D>();
+                // Set team
                 bulletCompCW.team = team;
+                // Unused range
                 bulletCompCW.BulletRangeLeft = bulletCompCW.BulletRange;
-                bulletCompCW.RB.velocity = (playerVel + shotAngle);
+                // Rotate velocity
+                var velocityCW =
+                    new Vector3(bulletVelocity.x * Mathf.Cos(angleCW)
+                                , bulletVelocity.y * Mathf.Sin(angleCW));
+                // Apply velocity and offset from player
+                bulletCompCW.RB.velocity = (playerVel + velocityCW);
 
-                var angleCCW = -(angleDivision * i);
+
+                // Create bullet wrapping counter clockwise from origin \\
+                var angleCCW = (-(angleDivision * i)) + startAngle;
                 var x1 = Mathf.Cos(angleCCW + shotAngle.x) + bulletSpawn.x;
                 var y1 = Mathf.Sin(angleCCW + shotAngle.y) + bulletSpawn.y;
-                var bulletCCW =
+                var bulletCCW = 
                 Instantiate(bulletPrefab
                 , new Vector3(x1, y1, bulletSpawn.z - 0.5f)
                 , Quaternion.identity);
@@ -115,7 +147,12 @@ public class Ammo : MonoBehaviour
                 bulletCompCCW.RB = bulletCCW.GetComponent<Rigidbody2D>();
                 bulletCompCCW.team = team;
                 bulletCompCCW.BulletRangeLeft = bulletCompCCW.BulletRange;
-                bulletCompCCW.RB.velocity = (playerVel + shotAngle);
+
+                // Rotate velocity
+                var velocityCCW =
+                    new Vector3(bulletVelocity.x * Mathf.Cos(angleCCW)
+                        , bulletVelocity.y * Mathf.Sin(angleCCW));
+                bulletCompCCW.RB.velocity = (playerVel + velocityCCW);
 
             }
 

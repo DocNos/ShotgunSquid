@@ -25,6 +25,7 @@ public class HeroStats : MonoBehaviour
 	public GameObject TimedAnchorPrefab;
     public GameObject UiCanvasPrefab;
     private UiStatsDisplay HeroStatsDisplay;
+    public Hero parent;
 
     public int StartingHealth = 3;
     public int MaxHealth
@@ -136,7 +137,7 @@ public class HeroStats : MonoBehaviour
 					++Speed;
                     break;
                 case CollectibleTypes.ShotBoost:
-					++(GetComponent<HeroShoot>().BulletsPerShot);
+                    ++parent.bulletsPerShot;
                     break;
                 case CollectibleTypes.Heart:
                     if (Health == MaxHealth)

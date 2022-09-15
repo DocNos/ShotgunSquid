@@ -320,10 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5882a88b1311e04db8a355f29e98c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: {fileID: 7904823866863303945}
   stats: {fileID: 5538859155035445162}
-  ammo: {fileID: 7904823866863303951}
-  shotgun: {fileID: 0}
   rb: {fileID: 0}
   team: 0
   startPos: {x: 0, y: 0, z: 0}
@@ -332,6 +329,11 @@ MonoBehaviour:
   portalCol: {fileID: 0}
   director: {fileID: 0}
   restartTimer: {fileID: 0}
+  shoot: {fileID: 7904823866863303945}
+  ammo: {fileID: 7904823866863303951}
+  shotgun: {fileID: 0}
+  bulletsPerShot: 7
+  bulletSpeed: 8
 --- !u!114 &7904823866863303945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,8 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980394512c72d6f4e93e68b6acd5448e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShotCooldown: 0.25
-  BulletsPerShot: 1
+  ShotCooldown: 1.5
   shotCooldownTimer: {fileID: 7232988464963258115}
   parent: {fileID: 7904823866863303947}
 --- !u!114 &7904823866863303951
@@ -385,6 +386,7 @@ MonoBehaviour:
   WeightedCameraTargetPrefab: {fileID: 0}
   TimedAnchorPrefab: {fileID: 0}
   UiCanvasPrefab: {fileID: 0}
+  parent: {fileID: 0}
   StartingHealth: 3
   StartingSilverKeys: 0
   SilverKeys: 0
