@@ -211,10 +211,10 @@ public class PCG : MonoBehaviour
 				var tile = prevBranch[i];
 		
 				
-				//SpawnHallway(ref tile, RNG.Next(15, 30));
-				//SpawnHallway(ref tile, RNG.Next(8, 15));
-				SpawnHallWayTwisty(ref tile, 10, 0, TryPlaceRandom(tile));
-				//SpawnHallway(ref tile, RNG.Next(8, 15));
+				SpawnHallway(ref tile, RNG.Next(15, 30));
+				SpawnHallway(ref tile, RNG.Next(8, 15));
+				//SpawnHallWayTwisty(ref tile, 10, 0, TryPlaceRandom(tile));
+				SpawnHallway(ref tile, RNG.Next(8, 15));
 				
 				//SpawnRoom(tile, 3, 3);
 		

@@ -117,7 +117,8 @@ public class Ammo : MonoBehaviour
             // initial shot angle. 
             var angleDivision = (((Mathf.PI/2)) / numBullets) ;
             for (int i = 1; i <= numBullets / 2; ++i)
-            {             
+            {
+                startAngle = (startAngle < 0) ? (-startAngle) : (startAngle);
                 // Increment by this angle on the half-circle
                 var angleCW = (angleDivision * i) + startAngle;
                 // Decompose shot angle vector

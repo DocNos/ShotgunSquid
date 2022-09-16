@@ -103,37 +103,42 @@ public class Hero : MonoBehaviour
     void MoveHero()
     {
         var totalVel = rb.velocity;
+        bool doMove = false;
         if(Input.GetKey(KeyCode.W))
         {
-            totalVel += (Vector2.up * Time.deltaTime);
+            totalVel += (Vector2.up * stats.Speed);
+            doMove = true;
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            totalVel += (Vector2.down * Time.deltaTime);
-        }
-        else
-        {
-            totalVel.y = 0f;
+            totalVel += (Vector2.down * stats.Speed);
+            doMove = true;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            totalVel += (Vector2.left * Time.deltaTime);
+            totalVel += (Vector2.left * stats.Speed);
+            doMove = true;
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            totalVel += (Vector2.right * Time.deltaTime);
+            totalVel += (Vector2.right * stats.Speed);
+            doMove = true;
+        }
+
+        if(doMove)
+        {
+            var normalVel = (totalVel);
+            var targetPos = rb.position + normalVel;
+            var lerpVelocity = Vector2.Lerp(normalVel, totalVel.normalized, .5f);
+            rb.velocity = lerpVelocity;
         }
         else
         {
-            totalVel.x = 0f;
+            var lerpVelocity = Vector2.Lerp(totalVel, Vector2.zero, .6f);
+            rb.velocity = lerpVelocity;
         }
-        var normalVel = (totalVel.normalized) * stats.Speed;
-        //var vel = Vector2.Lerp(normalVel, Vector2.zero, .5f);
-        //
-        //vel.x = (vel.x < 0.25f) ? (0f) : vel.x;
-        //vel.y = (vel.y < 0.25f) ? (0f) : vel.y;
-        rb.velocity = normalVel;
+        
             
     }
 }

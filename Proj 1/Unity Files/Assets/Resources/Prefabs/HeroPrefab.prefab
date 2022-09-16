@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d773dc3af2cb644fbe016588791a929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinZoom: 5
+  MinZoom: 10
   MaxZoom: 100
   Zoom: 15
   leftEdge: 3.4028235e+38
@@ -334,6 +334,7 @@ MonoBehaviour:
   shotgun: {fileID: 0}
   bulletsPerShot: 7
   bulletSpeed: 8
+  debugCanvas: {fileID: 0}
 --- !u!114 &7904823866863303945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +371,7 @@ MonoBehaviour:
   maxShots: 8
   reloadTimer: {fileID: 6222579049743030494}
   reloadTime: 0.15
+  debug: {fileID: 0}
 --- !u!114 &5538859155035445162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +394,7 @@ MonoBehaviour:
   SilverKeys: 0
   StartingGoldKeys: 0
   GoldKeys: 0
-  StartingSpeed: 10
+  StartingSpeed: 6
   Speed: 0
 --- !u!50 &2279654725883267173
 Rigidbody2D:
