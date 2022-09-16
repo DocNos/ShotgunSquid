@@ -201,29 +201,46 @@ public class PCG : MonoBehaviour
 			var randTile = allTiles[randIndX, randIndY].GetComponent<Tile>();
 			SpawnRoom(randTile, randW, randH);
 		}
-		
+
 		// Generate starting from branch tiles
-		while(branchTiles.Count > 0)
+		List<Tile> prevBranch = new List<Tile>(branchTiles);
+		for (int i = 0; i < prevBranch.Count; ++i)
 		{
-			List<Tile> prevBranch = new List<Tile>(branchTiles);
-			for (int i = 0; i < prevBranch.Count; ++i)
-			{
-				var tile = prevBranch[i];
-		
-				
-				SpawnHallway(ref tile, RNG.Next(15, 30));
-				SpawnHallway(ref tile, RNG.Next(8, 15));
-				//SpawnHallWayTwisty(ref tile, 10, 0, TryPlaceRandom(tile));
-				SpawnHallway(ref tile, RNG.Next(8, 15));
-				
-				//SpawnRoom(tile, 3, 3);
-		
-				branchTiles.Remove(tile);
-			}
+			var tile = prevBranch[i];
+
+
+			//SpawnHallway(ref tile, RNG.Next(15, 30));
+			//SpawnHallway(ref tile, RNG.Next(8, 15));
+			//SpawnHallway(ref tile, RNG.Next(8, 15));
+			var dir = TryPlaceRandom(tile);
+			SpawnHallWayTwisty(ref tile, 10, 0, dir);
+			//SpawnRoom(tile, 3, 3);
+
+			branchTiles.Remove(tile);
 		}
-		
+
+
+		//while(branchTiles.Count > 0)
+		//{
+		//	List<Tile> prevBranch = new List<Tile>(branchTiles);
+		//	for (int i = 0; i < prevBranch.Count; ++i)
+		//	{
+		//		var tile = prevBranch[i];
+		//
+		//		
+		//		SpawnHallway(ref tile, RNG.Next(15, 30));
+		//		SpawnHallway(ref tile, RNG.Next(8, 15));
+		//		//SpawnHallway(ref tile, RNG.Next(8, 15));
+		//		var dir = TryPlaceRandom(tile);
+		//		SpawnHallWayTwisty(ref tile, 10, 0, dir);
+		//		//SpawnRoom(tile, 3, 3);
+		//
+		//		branchTiles.Remove(tile);
+		//	}
+		//}
+
 		// Fill remainder with walls
-		foreach(GameObject tileObj in allTiles)
+		foreach (GameObject tileObj in allTiles)
 		{
 			var tile = tileObj.GetComponent<Tile>();
 			if(tile.type == Tile.Type.none)
@@ -235,6 +252,87 @@ public class PCG : MonoBehaviour
 		}
 
 		
+	}
+	// TODO: Put walls on either side
+	public void SpawnHallWayTwisty(ref Tile curr, int hallLength
+								 , int twistIntensity, Tile.DirectionValid dir)
+	{
+		Tile endTile;
+		Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+
+		if(dir==Tile.DirectionValid.east || dir == Tile.DirectionValid.west)
+		{
+			endCoord.x = (dir == Tile.DirectionValid.east) ?
+				(endCoord.x + hallLength) : (endCoord.x - hallLength);
+			var incrementX = (dir == Tile.DirectionValid.east) ? (1) : (-1);
+			var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+			var flip = RNG.Next(0, 2);
+
+			// Tails go north first
+			var incrementY = (flip == 0) ? (1) : (-1);
+			for(int i = 0; i < (hallLength/2); ++i)
+			{
+				var type = (RNG.Next(0, 10) == 1) ?
+					(Tile.Type.floorDirty) : (Tile.Type.floor);
+
+				currCoord.y += incrementY;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				currCoord.x += incrementX;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
+			}
+			for (int i = 0; i < (hallLength / 2); ++i)
+			{
+				var type = (RNG.Next(0, 10) == 1) ?
+					(Tile.Type.floorDirty) : (Tile.Type.floor);
+
+				currCoord.y += -(incrementY);
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				currCoord.x += incrementX;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
+			}
+			
+			
+		}
+
+		if(dir==Tile.DirectionValid.north || dir == Tile.DirectionValid.south)
+		{
+			endCoord.y = (dir == Tile.DirectionValid.north) ?
+				(endCoord.y + hallLength) : (endCoord.y - hallLength);
+			var incrementY = (dir == Tile.DirectionValid.north) ? (1) : (-1);
+			var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+			var flip = RNG.Next(0, 2);
+			// Tails go north first
+			var incrementX = (flip == 0) ? (1) : (-1);
+			
+			for (int i = 0; i < (hallLength / 2); ++i)
+			{
+				var type = (RNG.Next(0, 10) == 1) ?
+					(Tile.Type.floorDirty) : (Tile.Type.floor);
+
+				currCoord.x += incrementX;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				currCoord.y += incrementY;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
+			}
+			for (int i = 0; i < (hallLength / 2); ++i)
+			{
+				var type = (RNG.Next(0, 10) == 1) ?
+					(Tile.Type.floorDirty) : (Tile.Type.floor);
+
+				currCoord.x += incrementX;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				currCoord.y += incrementY;
+				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
+				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
+			}
+			
+		}
+		
+
+
 	}
 
 	public void ContextSpawnTile(ref Tile curr
@@ -352,125 +450,6 @@ public class PCG : MonoBehaviour
 			}
 		}
 
-	}
-
-	public void SpawnHallWayTwisty(ref Tile curr, int hallLength, int twistIntensity, Tile.DirectionValid dir)
-	{
-		switch(dir)
-		{
-			case (Tile.DirectionValid.east):
-			{
-				Vector2 endCoord = new Vector2( curr.horzIndex + hallLength, curr.vertIndex);
-				var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
-				while(currCoord.x != endCoord.x)
-				{
-					// Coin flip. 
-					if(RNG.Next(0,1) == 1)
-					{
-						++currCoord.y;
-					}
-					else
-					{
-						--currCoord.y;
-					}
-					var tileType = (RNG.Next(0, 10) == 1) ?
-							(Tile.Type.floorDirty) : (Tile.Type.floor);
-					++currCoord.x;
-					if(CheckIndex((int)currCoord.x, (int)currCoord.y, false))
-					{
-						curr = 
-						CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
-						.GetComponent<Tile>();
-					}
-					
-				}
-				
-			}break;
-			case (Tile.DirectionValid.west):
-				{
-					Vector2 endCoord = new Vector2(curr.horzIndex - hallLength, curr.vertIndex);
-					var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
-					while (currCoord.x != endCoord.x)
-					{
-						// Coin flip. 
-						if (RNG.Next(0, 1) == 1)
-						{
-							++currCoord.y;
-						}
-						else
-						{
-							--currCoord.y;
-						}
-						var tileType = (RNG.Next(0, 10) == 1) ?
-								(Tile.Type.floorDirty) : (Tile.Type.floor);
-						--currCoord.x;
-						if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
-						{
-							curr = 
-								CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
-								.GetComponent<Tile>();
-						}
-					}
-
-				}
-				break;
-			case (Tile.DirectionValid.north):
-				{
-					Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex + hallLength);
-					var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
-					while (currCoord.y != endCoord.y)
-					{
-						// Coin flip. 
-						if (RNG.Next(0, 1) == 1)
-						{
-							++currCoord.x;
-						}
-						else
-						{
-							--currCoord.x;
-						}
-						var tileType = (RNG.Next(0, 10) == 1) ?
-								(Tile.Type.floorDirty) : (Tile.Type.floor);
-						++currCoord.y;
-						if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
-						{
-							curr = 
-								CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
-								.GetComponent<Tile>();
-						}
-					}
-
-				}
-				break;
-			case (Tile.DirectionValid.south):
-				{
-					Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex - hallLength);
-					var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
-					while (currCoord.y != endCoord.y)
-					{
-						// Coin flip. 
-						if (RNG.Next(0, 1) == 1)
-						{
-							++currCoord.x;
-						}
-						else
-						{
-							--currCoord.x;
-						}
-						var tileType = (RNG.Next(0, 10) == 1) ?
-								(Tile.Type.floorDirty) : (Tile.Type.floor);
-						--currCoord.y;
-						if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
-						{
-							curr = 
-								CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
-								.GetComponent<Tile>();
-						}
-					}
-
-				}
-				break;
-		}
 	}
 
 	public Tile.DirectionValid SpawnHallway(ref Tile curr, int hallLength)
@@ -925,3 +904,166 @@ public class PCG : MonoBehaviour
 		return Instantiate(Prefabs[obj], new Vector3(x * GridSize, y * GridSize, 0.0f), Quaternion.AngleAxis(90, Vector3.forward));
 	}
 }
+
+
+//case (Tile.DirectionValid.east):
+//			{
+//	Vector2 endCoord = new Vector2(curr.horzIndex + hallLength, curr.vertIndex);
+//	var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+//	var prevFlip = RNG.Next(0, 2);
+//	for (int i = 0; i < hallLength; ++i)
+//	{
+//		// Coin flip. 
+//		// 0 heads == go north
+//		// 1 tails == go south
+//		if (prevFlip == 0)
+//		{
+//			++currCoord.y;
+//		}
+//		else
+//		{
+//			--currCoord.y;
+//		}
+//		var tileType = (RNG.Next(0, 10) == 1) ?
+//				(Tile.Type.floorDirty) : (Tile.Type.floor);
+//
+//		//++currCoord.x;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		currCoord.x += i;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//			CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//			.GetComponent<Tile>();
+//		}
+//		prevFlip = RNG.Next(0, 2);
+//	}
+//
+//}
+//break;
+//		case (Tile.DirectionValid.west):
+//			{
+//	Vector2 endCoord = new Vector2(curr.horzIndex - hallLength, curr.vertIndex);
+//	var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+//	var prevFlip = RNG.Next(0, 2);
+//	while (currCoord.x != endCoord.x)
+//	{
+//		// Coin flip. 
+//		// 0 heads == go north
+//		// 1 tails == go south
+//		if (prevFlip == 0)
+//		{
+//			++currCoord.y;
+//		}
+//		else
+//		{
+//			--currCoord.y;
+//		}
+//		var tileType = (RNG.Next(0, 10) == 1) ?
+//			(Tile.Type.floorDirty) : (Tile.Type.floor);
+//
+//		//++currCoord.x;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		--currCoord.x;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		prevFlip = RNG.Next(0, 2);
+//	}
+//
+//}
+//break;
+//		case (Tile.DirectionValid.north):
+//			{
+//	Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex + hallLength);
+//	var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+//	var prevFlip = RNG.Next(0, 2);
+//	while (currCoord.y != endCoord.y)
+//	{
+//		// Coin flip. 
+//		// 0 heads == go north
+//		// 1 tails == go south
+//		if (prevFlip == 0)
+//		{
+//			++currCoord.x;
+//		}
+//		else
+//		{
+//			--currCoord.x;
+//		}
+//		var tileType = (RNG.Next(0, 10) == 1) ?
+//			(Tile.Type.floorDirty) : (Tile.Type.floor);
+//
+//		//++currCoord.x;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		++currCoord.y;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		prevFlip = RNG.Next(0, 2);
+//	}
+//
+//}
+//break;
+//		case (Tile.DirectionValid.south):
+//			{
+//	Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex - hallLength);
+//	var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+//	var prevFlip = RNG.Next(0, 2);
+//	while (currCoord.y != endCoord.y)
+//	{
+//		// Coin flip. 
+//		// 0 heads == go north
+//		// 1 tails == go south
+//		if (prevFlip == 0)
+//		{
+//			++currCoord.x;
+//		}
+//		else
+//		{
+//			--currCoord.x;
+//		}
+//		var tileType = (RNG.Next(0, 10) == 1) ?
+//			(Tile.Type.floorDirty) : (Tile.Type.floor);
+//
+//		//++currCoord.x;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		--currCoord.y;
+//		if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+//		{
+//			curr =
+//				CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+//					.GetComponent<Tile>();
+//		}
+//		prevFlip = RNG.Next(0, 2);
+//	}
+//
+//}
+//break;
+//	}
