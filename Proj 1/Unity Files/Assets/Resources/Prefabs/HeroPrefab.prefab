@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d773dc3af2cb644fbe016588791a929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinZoom: 10
+  MinZoom: 5
   MaxZoom: 100
   Zoom: 15
   leftEdge: 3.4028235e+38

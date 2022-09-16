@@ -13,6 +13,7 @@ public class Ammo : MonoBehaviour
     public int maxShots;
     public Timer reloadTimer;
     public float reloadTime;
+	public TextMesh debug;
 
     void Start()
     {
@@ -62,6 +63,14 @@ public class Ammo : MonoBehaviour
 
     public void Shoot(SceneDirector.Teams team, Vector3 shotAngle)
     {
+		var canvas = parent.debugCanvas.gameObject;
+		if(!debug)
+		{
+			var textMesh = canvas.AddComponent<TextMesh>();
+			debug = textMesh;
+		}
+		
+
         if(currBullets > 0)
         {
             var trans = parent.shotgun.GetComponentInChildren<RectTransform>();
@@ -87,22 +96,23 @@ public class Ammo : MonoBehaviour
             var numBullets = parent.bulletsPerShot;
             // Origin angle
             var startAngle = Mathf.Atan(shotAngle.y / shotAngle.x);
-            if(startAngle < 0)
-            {
-                startAngle = Mathf.Abs(startAngle);
-                if(shotAngle.x < 0 && shotAngle.y > 0)
-                {
-                    startAngle += (Mathf.PI / 2);
-                }
-                if(shotAngle.x < 0 && shotAngle.y < 0)
-                {
-                    startAngle += (Mathf.PI);
-                }
-                if (shotAngle.y < 0 && shotAngle.x > 0)
-                {
-                    startAngle += (3 * Mathf.PI / 2);
-                }
-            }
+			debug.text = startAngle.ToString();
+			//if(startAngle < 0)
+            //{
+            //    startAngle = Mathf.Abs(startAngle);
+            //    if(shotAngle.x < 0 && shotAngle.y > 0)
+            //    {
+            //        startAngle += (Mathf.PI / 2);
+            //    }
+            //    if(shotAngle.x < 0 && shotAngle.y < 0)
+            //    {
+            //        startAngle += (Mathf.PI);
+            //    }
+            //    if (shotAngle.y < 0 && shotAngle.x > 0)
+            //    {
+            //        startAngle += (3 * Mathf.PI / 2);
+            //    }
+            //}
             // Half circle, split among bullets and centered on 
             // initial shot angle. 
             var angleDivision = (((Mathf.PI/2)) / numBullets) ;

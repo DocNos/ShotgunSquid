@@ -69,6 +69,7 @@ public class SceneDirector : MonoBehaviour
         var heroObj = Instantiate(heroPrefab);
         hero = heroObj.GetComponent<Hero>();
         hero.director = this;
+		hero.debugCanvas = canvas;
 
         // Set cam to follow hero
         cam.GetComponent<CameraFollow>().ObjectToFollow = heroObj.transform;

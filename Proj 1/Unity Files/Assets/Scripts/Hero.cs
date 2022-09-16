@@ -24,6 +24,8 @@ public class Hero : MonoBehaviour
     public int bulletsPerShot;
     public float bulletSpeed;
 
+	public Canvas debugCanvas;
+
     // Start is called before the first frame update
     void Start()
     {

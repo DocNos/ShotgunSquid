@@ -10,7 +10,7 @@ using static UnityEngine.Random;
 public class PCG : MonoBehaviour
 {
 	public float GridSize = 2.0f; //Size of floor and wall tiles in units
-	public int MaxMapSize = 41; //Maximum height and width of tile map
+	public int MaxMapSize; //Maximum height and width of tile map
 
 
 	public Dictionary<string, GameObject> Prefabs; //Dictionary of all PCG prefabs
@@ -211,9 +211,10 @@ public class PCG : MonoBehaviour
 				var tile = prevBranch[i];
 		
 				
-				SpawnHallway(ref tile, RNG.Next(15, 30));
-				SpawnHallway(ref tile, RNG.Next(8, 15));
-				SpawnHallway(ref tile, RNG.Next(8, 15));
+				//SpawnHallway(ref tile, RNG.Next(15, 30));
+				//SpawnHallway(ref tile, RNG.Next(8, 15));
+				SpawnHallWayTwisty(ref tile, 10, 0, TryPlaceRandom(tile));
+				//SpawnHallway(ref tile, RNG.Next(8, 15));
 				
 				//SpawnRoom(tile, 3, 3);
 		
@@ -227,8 +228,8 @@ public class PCG : MonoBehaviour
 			var tile = tileObj.GetComponent<Tile>();
 			if(tile.type == Tile.Type.none)
 			{
-				Destroy(tile);
-				CreateTileIndex(Tile.Type.wall, tile.horzIndex, tile.vertIndex);
+				//Destroy(tile);
+				//CreateTileIndex(Tile.Type.wall, tile.horzIndex, tile.vertIndex);
 				
 			}
 		}
@@ -351,6 +352,125 @@ public class PCG : MonoBehaviour
 			}
 		}
 
+	}
+
+	public void SpawnHallWayTwisty(ref Tile curr, int hallLength, int twistIntensity, Tile.DirectionValid dir)
+	{
+		switch(dir)
+		{
+			case (Tile.DirectionValid.east):
+			{
+				Vector2 endCoord = new Vector2( curr.horzIndex + hallLength, curr.vertIndex);
+				var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+				while(currCoord.x != endCoord.x)
+				{
+					// Coin flip. 
+					if(RNG.Next(0,1) == 1)
+					{
+						++currCoord.y;
+					}
+					else
+					{
+						--currCoord.y;
+					}
+					var tileType = (RNG.Next(0, 10) == 1) ?
+							(Tile.Type.floorDirty) : (Tile.Type.floor);
+					++currCoord.x;
+					if(CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+					{
+						curr = 
+						CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+						.GetComponent<Tile>();
+					}
+					
+				}
+				
+			}break;
+			case (Tile.DirectionValid.west):
+				{
+					Vector2 endCoord = new Vector2(curr.horzIndex - hallLength, curr.vertIndex);
+					var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+					while (currCoord.x != endCoord.x)
+					{
+						// Coin flip. 
+						if (RNG.Next(0, 1) == 1)
+						{
+							++currCoord.y;
+						}
+						else
+						{
+							--currCoord.y;
+						}
+						var tileType = (RNG.Next(0, 10) == 1) ?
+								(Tile.Type.floorDirty) : (Tile.Type.floor);
+						--currCoord.x;
+						if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+						{
+							curr = 
+								CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+								.GetComponent<Tile>();
+						}
+					}
+
+				}
+				break;
+			case (Tile.DirectionValid.north):
+				{
+					Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex + hallLength);
+					var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+					while (currCoord.y != endCoord.y)
+					{
+						// Coin flip. 
+						if (RNG.Next(0, 1) == 1)
+						{
+							++currCoord.x;
+						}
+						else
+						{
+							--currCoord.x;
+						}
+						var tileType = (RNG.Next(0, 10) == 1) ?
+								(Tile.Type.floorDirty) : (Tile.Type.floor);
+						++currCoord.y;
+						if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+						{
+							curr = 
+								CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+								.GetComponent<Tile>();
+						}
+					}
+
+				}
+				break;
+			case (Tile.DirectionValid.south):
+				{
+					Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex - hallLength);
+					var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+					while (currCoord.y != endCoord.y)
+					{
+						// Coin flip. 
+						if (RNG.Next(0, 1) == 1)
+						{
+							++currCoord.x;
+						}
+						else
+						{
+							--currCoord.x;
+						}
+						var tileType = (RNG.Next(0, 10) == 1) ?
+								(Tile.Type.floorDirty) : (Tile.Type.floor);
+						--currCoord.y;
+						if (CheckIndex((int)currCoord.x, (int)currCoord.y, false))
+						{
+							curr = 
+								CreateTileIndex(tileType, (int)currCoord.x, (int)currCoord.x)
+								.GetComponent<Tile>();
+						}
+					}
+
+				}
+				break;
+		}
 	}
 
 	public Tile.DirectionValid SpawnHallway(ref Tile curr, int hallLength)

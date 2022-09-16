@@ -52,12 +52,6 @@ public class HeroShoot : MonoBehaviour
                     , transform.localScale.y);
             parent.shotgun.transform.localScale = transform.localScale;
         }
-        //else if(transform.localScale.x < 0)
-        //{
-        //    transform.localScale =
-        //        new Vector3(-transform.localScale.x
-        //            , transform.localScale.y);
-        //}
         
         var vecToMouse = worldMousePos - transform.position;
         var angle = Mathf.Atan(transform.up.y / transform.up.x);
