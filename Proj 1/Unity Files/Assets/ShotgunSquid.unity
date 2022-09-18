@@ -263,9 +263,6 @@ MonoBehaviour:
   floorTiles: []
   branchTiles: []
   branchChance: 10
-  maxBranches: 0
-  numRooms: 50
-  heroSpawn: {x: 0, y: 0, z: 0}
 --- !u!114 &204671492
 MonoBehaviour:
   m_ObjectHideFlags: 0

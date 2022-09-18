@@ -26,15 +26,16 @@ public class PCG : MonoBehaviour
 	public GameObject[,] allTiles;
 	public List<Tile> branchTiles;
 	public int branchChance; 
-	public int maxBranches; // Currently tied to numRooms * 2
-	public int numRooms;
+	private int maxBranches; // Currently tied to numRooms * 2
+	private int numRooms;
 	
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		numRooms = MaxMapSize / 2;
 		maxBranches = numRooms * 2;
-
+		
 		corners = new Vector3[4];
 		floorTiles = new GameObject[MaxMapSize * MaxMapSize];
 		allTiles = new GameObject[MaxMapSize, MaxMapSize];
@@ -138,6 +139,9 @@ public class PCG : MonoBehaviour
 				allTiles[horzIndex, vertIndex]
 						.GetComponent<Tile>().vertIndex
 					= vertIndex;
+				allTiles[horzIndex, vertIndex]
+						.GetComponent<Tile>().dirs = 
+						new Dictionary<Tile.DirectionValid, bool>();
 				++horzIndex;
 			}
 			horzIndex = 0;
@@ -145,17 +149,7 @@ public class PCG : MonoBehaviour
 			curr.x = start.x + halfGrid;
 			curr.y += GridSize;
 		}
-		// Place map boundaries
-		for(int i = 0; i < MaxMapSize; ++i)
-		{
-			CreateTileIndex(Tile.Type.outerWall, i, 0);
-			CreateTileIndex(Tile.Type.outerWall, 0, i);
-		}
-		for (int i = MaxMapSize - 1; i >= 0; --i)
-		{
-			CreateTileIndex(Tile.Type.outerWall, i, MaxMapSize - 1);
-			CreateTileIndex(Tile.Type.outerWall, MaxMapSize - 1, i);
-		}
+		
 
 	}
 
@@ -166,25 +160,15 @@ public class PCG : MonoBehaviour
 		var halfMap = MaxMapSize / 2;
 		var halfGrid = GridSize / 2;
 		start.x += halfGrid; start.y += halfGrid;
-		var currTileObj = 
-			CreateTileIndex(Tile.Type.floor, halfMap, halfMap);
+		var currTileObj = allTiles[halfMap, halfMap];
+		currTileObj = 
+			CreateTileIndex(Tile.Type.floor, halfMap, halfMap, currTileObj);
 		curr.x += halfGrid;
 		curr.y += halfGrid;
 		Tile.DirectionValid dirs = Tile.DirectionValid.north;
 		var currTile = currTileObj.GetComponent<Tile>();
 		
 		// Portal is created & placed in SceneDirector.cs
-
-		// First Algorithm, before switching to room-based.
-		while(dirs != Tile.DirectionValid.none)
-		{
-			Tile.Type floorType =
-				(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
-			dirs = TryPlaceRandom(currTile);
-			ContextSpawnTile(ref currTile, floorType, dirs);
-		}
-
-		
 
 		// Rooms with random size & location
 		// Rooms will always have an entrance & exit.
@@ -194,144 +178,219 @@ public class PCG : MonoBehaviour
 		{
 			var randIndX = RNG.Next(0, MaxMapSize - 1);
 			var randIndY = RNG.Next(0, MaxMapSize - 1);
-			var randW = RNG.Next(8, 18);
-			var randH = RNG.Next(8, 18);
+			var randW = RNG.Next(5, 10);
+			var randH = RNG.Next(5, 10);
 			randW = (randW % 2 == 0) ? (++randW) : (randW);
 			randH = (randH % 2 == 0) ? (++randH) : (randH);
-			var randTile = allTiles[randIndX, randIndY].GetComponent<Tile>();
-			SpawnRoom(randTile, randW, randH);
-		}
+			var randTile = GetTile(randIndX, randIndY);
+			SpawnRoom(randTile.GetComponent<Tile>(), randW, randH);
 
-		// Generate starting from branch tiles
-		List<Tile> prevBranch = new List<Tile>(branchTiles);
-		for (int i = 0; i < prevBranch.Count; ++i)
+		}
+		
+
+
+		while(branchTiles.Count > 0)
 		{
-			var tile = prevBranch[i];
-
-
-			//SpawnHallway(ref tile, RNG.Next(15, 30));
-			//SpawnHallway(ref tile, RNG.Next(8, 15));
-			//SpawnHallway(ref tile, RNG.Next(8, 15));
-			var dir = TryPlaceRandom(tile);
-			SpawnHallWayTwisty(ref tile, 10, 0, dir);
-			//SpawnRoom(tile, 3, 3);
-
-			branchTiles.Remove(tile);
+			List<Tile> prevBranch = new List<Tile>(branchTiles);
+			List<Tile> toDelete = new List<Tile>();
+			for (int i = 0; i < prevBranch.Count; ++i)
+			{
+				var tile = prevBranch[i];
+		
+				// TODO: TryPlaceRandom is broken. 
+				SpawnHallway(tile, RNG.Next(15, 30));
+				SpawnHallway(tile, RNG.Next(8, 15));
+				////SpawnHallway(ref tile, RNG.Next(8, 15));
+				var dir = GetRandomDirection();
+				if(dir != Tile.DirectionValid.none)
+				{
+					SpawnHallWayTwisty(tile, RNG.Next(10, 26), 2, dir);
+					SpawnHallWayTwisty(tile, RNG.Next(10, 26), 4, dir);
+				}
+				
+				toDelete.Add(tile);
+			}
+			foreach(var tile in toDelete)
+			{
+				branchTiles.Remove(tile);
+			}
 		}
 
+		// Place map boundaries
+		GameObject prevTileObj = allTiles[0, 0].gameObject;
+		for (int i = 0; i < MaxMapSize; ++i)
+		{
 
-		//while(branchTiles.Count > 0)
-		//{
-		//	List<Tile> prevBranch = new List<Tile>(branchTiles);
-		//	for (int i = 0; i < prevBranch.Count; ++i)
-		//	{
-		//		var tile = prevBranch[i];
-		//
-		//		
-		//		SpawnHallway(ref tile, RNG.Next(15, 30));
-		//		SpawnHallway(ref tile, RNG.Next(8, 15));
-		//		//SpawnHallway(ref tile, RNG.Next(8, 15));
-		//		var dir = TryPlaceRandom(tile);
-		//		SpawnHallWayTwisty(ref tile, 10, 0, dir);
-		//		//SpawnRoom(tile, 3, 3);
-		//
-		//		branchTiles.Remove(tile);
-		//	}
-		//}
-
+			CreateTileIndex_Ignore(Tile.Type.outerWall, i, 0);
+			prevTileObj = allTiles[0, i].gameObject;
+			CreateTileIndex_Ignore(Tile.Type.outerWall, 0, i);
+		}
+		for (int i = MaxMapSize - 1; i >= 0; --i)
+		{
+			CreateTileIndex_Ignore(Tile.Type.outerWall, i, MaxMapSize - 1);
+			CreateTileIndex_Ignore(Tile.Type.outerWall, MaxMapSize - 1, i);
+		}
 		// Fill remainder with walls
 		foreach (GameObject tileObj in allTiles)
 		{
 			var tile = tileObj.GetComponent<Tile>();
 			if(tile.type == Tile.Type.none)
 			{
-				//Destroy(tile);
-				//CreateTileIndex(Tile.Type.wall, tile.horzIndex, tile.vertIndex);
+				Destroy(tile);
+				CreateTileIndex_Ignore(Tile.Type.wall, tile.horzIndex, tile.vertIndex);
 				
 			}
 		}
 
 		
 	}
-	// TODO: Put walls on either side
-	public void SpawnHallWayTwisty(ref Tile curr, int hallLength
+	
+	public void SpawnHallWayTwisty(Tile curr, int hallLength
 								 , int twistIntensity, Tile.DirectionValid dir)
 	{
 		Tile endTile;
-		Vector2 endCoord = new Vector2(curr.horzIndex, curr.vertIndex);
-
-		if(dir==Tile.DirectionValid.east || dir == Tile.DirectionValid.west)
+		Vector2 startCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+		Vector2 endCoord = startCoord;
+		var topLeft = startCoord;
+		var bottomRight = startCoord;
+		bool no = false;
+		var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+		if (dir==Tile.DirectionValid.east || dir == Tile.DirectionValid.west)
 		{
+			// Using ternary here to cut down on code length
 			endCoord.x = (dir == Tile.DirectionValid.east) ?
 				(endCoord.x + hallLength) : (endCoord.x - hallLength);
 			var incrementX = (dir == Tile.DirectionValid.east) ? (1) : (-1);
-			var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+			
+			currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
 			var flip = RNG.Next(0, 2);
 
 			// Tails go north first
+			
+			var numTwists = 0;
 			var incrementY = (flip == 0) ? (1) : (-1);
-			for(int i = 0; i < (hallLength/2); ++i)
+			while (numTwists < twistIntensity)
 			{
-				var type = (RNG.Next(0, 10) == 1) ?
-					(Tile.Type.floorDirty) : (Tile.Type.floor);
+				for (int i = 0; i < (hallLength / twistIntensity); ++i)
+				{
+					var type = (RNG.Next(0, 10) == 1) ?
+						(Tile.Type.floorDirty) : (Tile.Type.floor);
 
-				currCoord.y += incrementY;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				currCoord.x += incrementX;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
-			}
-			for (int i = 0; i < (hallLength / 2); ++i)
-			{
-				var type = (RNG.Next(0, 10) == 1) ?
-					(Tile.Type.floorDirty) : (Tile.Type.floor);
+					var currObj = GetTile((int)currCoord.x, (int)currCoord.y);
+					var currTile = currObj.GetComponent<Tile>();
+					if (Check360(currTile, Tile.Type.wall, 2) >= 2)
+					{
+						FillArea(
+							new Vector2(currTile.horzIndex - 1, currTile.vertIndex + 1)
+							, new Vector2(currTile.horzIndex + 1, currTile.vertIndex - 1)
+							, Tile.Type.floor, true);
 
-				currCoord.y += -(incrementY);
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				currCoord.x += incrementX;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
+					}
+					// L Shape 
+					currCoord.x += incrementX;
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+
+					currCoord.y += incrementY;
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					curr = currObj.GetComponent<Tile>();
+					++numTwists;
+				}
+				for (int i = 0; i < (hallLength / twistIntensity); ++i)
+				{
+					var type = (RNG.Next(0, 10) == 1) ?
+						(Tile.Type.floorDirty) : (Tile.Type.floor);
+					var currObj = GetTile((int)currCoord.x, (int)currCoord.y);
+					var currTile = currObj.GetComponent<Tile>();
+					if (Check360(currTile, Tile.Type.wall, 2) >= 2)
+					{
+						FillArea(
+							new Vector2(currTile.horzIndex - 1, currTile.vertIndex + 1)
+							, new Vector2(currTile.horzIndex + 1, currTile.vertIndex - 1)
+							, Tile.Type.floor, true);
+
+					}
+					currCoord.x += incrementX;
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					currCoord.y += -(incrementY);
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					curr = currObj.GetComponent<Tile>();
+					++numTwists;
+				}
 			}
 			
-			
+			SpawnHallwayDir(GetTile((int)endCoord.x, (int)endCoord.y).GetComponent<Tile>()
+							, MaxMapSize / 5, dir);
 		}
-
-		if(dir==Tile.DirectionValid.north || dir == Tile.DirectionValid.south)
+		
+		if (dir==Tile.DirectionValid.north || dir == Tile.DirectionValid.south)
 		{
 			endCoord.y = (dir == Tile.DirectionValid.north) ?
 				(endCoord.y + hallLength) : (endCoord.y - hallLength);
 			var incrementY = (dir == Tile.DirectionValid.north) ? (1) : (-1);
-			var currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
+			currCoord = new Vector2(curr.horzIndex, curr.vertIndex);
 			var flip = RNG.Next(0, 2);
 			// Tails go north first
 			var incrementX = (flip == 0) ? (1) : (-1);
-			
-			for (int i = 0; i < (hallLength / 2); ++i)
+			var numTwists = 0;
+			while(numTwists < twistIntensity)
 			{
-				var type = (RNG.Next(0, 10) == 1) ?
-					(Tile.Type.floorDirty) : (Tile.Type.floor);
+				for (int i = 0; i < (hallLength / twistIntensity); ++i)
+				{
+					var type = (RNG.Next(0, 10) == 1) ?
+						(Tile.Type.floorDirty) : (Tile.Type.floor);
+					var currObj = GetTile((int)currCoord.x, (int)currCoord.y);
+					var currTile = currObj.GetComponent<Tile>();
+					if (Check360(currTile, Tile.Type.wall, 2) >= 2)
+					{
+						FillArea(
+							new Vector2(currTile.horzIndex - 1, currTile.vertIndex + 1)
+							, new Vector2(currTile.horzIndex + 1, currTile.vertIndex - 1)
+							, Tile.Type.floor, true);
 
-				currCoord.x += incrementX;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				currCoord.y += incrementY;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
-			}
-			for (int i = 0; i < (hallLength / 2); ++i)
-			{
-				var type = (RNG.Next(0, 10) == 1) ?
-					(Tile.Type.floorDirty) : (Tile.Type.floor);
+					}
+					currCoord.y += incrementY;
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					currCoord.x += incrementX;
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					curr = currObj.GetComponent<Tile>();
+					++numTwists;
+				}
+				for (int i = 0; i < (hallLength / twistIntensity); ++i)
+				{
+					var type = (RNG.Next(0, 10) == 1) ?
+						(Tile.Type.floorDirty) : (Tile.Type.floor);
+					var currObj = GetTile((int)currCoord.x, (int)currCoord.y);
+					var currTile = currObj.GetComponent<Tile>();
+					if (Check360(currTile, Tile.Type.wall, 2) >= 2)
+					{
+						FillArea(
+							new Vector2(currTile.horzIndex - 1, currTile.vertIndex + 1)
+							, new Vector2(currTile.horzIndex + 1, currTile.vertIndex - 1)
+							, Tile.Type.floor, true);
 
-				currCoord.x += incrementX;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				currCoord.y += incrementY;
-				CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y);
-				curr = allTiles[(int)currCoord.x, (int)currCoord.y].GetComponent<Tile>();
+					}
+					currCoord.y += incrementY;
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					currCoord.x += -(incrementX);
+					currObj = CreateTileIndex(type, (int)currCoord.x, (int)currCoord.y, currObj);
+					curr = currObj.GetComponent<Tile>();
+					++numTwists;
+				}
+				
 			}
-			
+			SpawnHallwayDir(GetTile((int)endCoord.x, (int)endCoord.y).GetComponent<Tile>()
+				, MaxMapSize/ 5, dir);
+
 		}
 		
-
+		
+		//FillArea(topLeft, bottomRight, Tile.Type.wall);
+		
+		if(RNG.Next(0, 4) == 1)
+		{
+			AddBranch(curr);
+		}
+		
 
 	}
 
@@ -390,11 +449,9 @@ public class PCG : MonoBehaviour
 			}break;
 		}
 
-		if(canPlace)
-		{
-			CreateTileIndex(type, hIndex, vIndex);
-			curr = allTiles[hIndex, vIndex].GetComponent<Tile>();
-		}
+		CreateTileIndex_Replace(GetTile(hIndex, vIndex) .GetComponent<Tile>(), Tile.Type.floorDirty);
+		curr = allTiles[hIndex, vIndex].GetComponent<Tile>();
+		
 
 	}
 
@@ -403,11 +460,12 @@ public class PCG : MonoBehaviour
 		var x = portalTile.horzIndex;
 		var y = portalTile.vertIndex;
 		var halfMap = MaxMapSize / 4;
+
 		for(int i = 1; i < halfMap; ++i)
 		{
 			if(CheckIndex(x, y + i, true))
 			{
-				CreateTileIndex(Tile.Type.exitPathN, x, y + i);
+				CreateTileIndex_Ignore(Tile.Type.exitPathN, x, y + i);
 			}
 			
 		}
@@ -415,14 +473,14 @@ public class PCG : MonoBehaviour
 		{
 			if(CheckIndex(x, y-i, true))
 			{
-				CreateTileIndex(Tile.Type.exitPathN, x, y - i);
+				CreateTileIndex_Ignore(Tile.Type.exitPathN, x, y - i);
 			}
 		}
 		for (int i = 1; i < halfMap; ++i)
 		{
 			if (CheckIndex(x + i, y, true))
 			{
-				CreateTileIndex(Tile.Type.exitPathE, x + i, y);
+				CreateTileIndex_Ignore(Tile.Type.exitPathE, x + i, y);
 			}
 
 		}
@@ -430,7 +488,7 @@ public class PCG : MonoBehaviour
 		{
 			if (CheckIndex(x - i, y, true))
 			{
-				CreateTileIndex(Tile.Type.exitPathE, x - i, y);
+				CreateTileIndex_Ignore(Tile.Type.exitPathE, x - i, y);
 			}
 		}
 	}
@@ -452,9 +510,9 @@ public class PCG : MonoBehaviour
 
 	}
 
-	public Tile.DirectionValid SpawnHallway(ref Tile curr, int hallLength)
+	public Tile.DirectionValid SpawnHallway(Tile curr, int hallLength)
 	{
-		var dir = TryPlaceRandom(curr);
+		var dir = GetRandomDirection();
 		if(dir != Tile.DirectionValid.none)
 		{
 			for (int i = 0; i < hallLength; ++i)
@@ -486,11 +544,11 @@ public class PCG : MonoBehaviour
 			// North and South Walls
 			if(CheckIndex(top, minV, false))
 			{
-				curr = CreateTileIndex(Tile.Type.wall, top, minV);
+				curr = CreateTileIndex(Tile.Type.wall, top, minV, curr);
 			}
 			if(CheckIndex(top, maxV, false))
 			{
-				curr = CreateTileIndex(Tile.Type.wall, top, maxV);
+				curr = CreateTileIndex(Tile.Type.wall, top, maxV, curr);
 			}
 			
 		}
@@ -500,11 +558,11 @@ public class PCG : MonoBehaviour
 			// East and West walls
 			if(CheckIndex(minH, v, false))
 			{
-				curr = CreateTileIndex(Tile.Type.wall, minH, v);
+				curr = CreateTileIndex(Tile.Type.wall, minH, v, curr);
 			}
 			if(CheckIndex(maxH, v, false))
 			{
-				curr = CreateTileIndex(Tile.Type.wall, maxH, v);
+				curr = CreateTileIndex(Tile.Type.wall, maxH, v, curr);
 			}
 		}
 
@@ -520,7 +578,7 @@ public class PCG : MonoBehaviour
 			{
 				if(CheckIndex(fillX + i, fillY + j, false))
 				{
-					CreateTileIndex(floorType, fillX + i, fillY + j);
+					CreateTileIndex_Ignore(floorType, fillX + i, fillY + j);
 				}
 				floorType =
 					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) 
@@ -569,7 +627,7 @@ public class PCG : MonoBehaviour
 		var branchTile0 = allTiles[indexX, center.vertIndex];
 		Destroy(branchTile0);
 		branchTiles.Add
-		(CreateTileIndex(floorType
+		(CreateTileIndex_Ignore(floorType
 		, indexX, center.vertIndex).GetComponent<Tile>());
 		// Doorway N/S
 		if(variantY < 0)
@@ -579,11 +637,14 @@ public class PCG : MonoBehaviour
 				floorType =
 					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
 				var branchTile1 = allTiles[indexX, center.vertIndex + i];
-				Destroy(branchTile1);
-				branchTiles.Add
-				(CreateTileIndex(floorType
+				var newBranch = CreateTileIndex_Ignore(floorType
 						, indexX, center.vertIndex + i)
-					.GetComponent<Tile>());
+					.GetComponent<Tile>();
+				if(AddBranch(newBranch))
+				{
+					Destroy(branchTile1);
+				}
+				
 			}
 		}
 		else
@@ -593,21 +654,29 @@ public class PCG : MonoBehaviour
 				floorType =
 					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
 				var branchTile1 = allTiles[indexX, center.vertIndex + i];
-				Destroy(branchTile1);
-				branchTiles.Add
-				(CreateTileIndex(floorType
+				var newBranch = CreateTileIndex_Ignore(floorType
 						, indexX, center.vertIndex + i)
-					.GetComponent<Tile>());
+					.GetComponent<Tile>();
+				if(AddBranch(newBranch))
+				{
+					Destroy(branchTile1);
+				}
+				
+				
 			}
 		}
 
 		floorType =
 			(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
 		var branchTile2 = allTiles[center.horzIndex, indexY];
-		Destroy(branchTile2);
-		branchTiles.Add
-		(CreateTileIndex(floorType
-		, center.horzIndex, indexY).GetComponent<Tile>());
+		var newBranch0 = CreateTileIndex_Ignore(floorType
+			, center.horzIndex, indexY).GetComponent<Tile>();
+		if(AddBranch(newBranch0))
+		{
+			Destroy(branchTile2);
+		}
+		
+		
 		
 		//Doorway W/E
 		if(variantX < 0)
@@ -617,11 +686,14 @@ public class PCG : MonoBehaviour
 				floorType =
 					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
 				var branchTile3 = allTiles[center.horzIndex + i, indexY];
-				Destroy(branchTile3);
-				branchTiles.Add
-				(CreateTileIndex(floorType
-						, center.horzIndex + i, indexY)
-					.GetComponent<Tile>());
+				var newBranch = CreateTileIndex_Ignore(floorType, center.horzIndex + i, indexY)
+					.GetComponent<Tile>();
+				if(AddBranch(newBranch))
+				{
+					Destroy(branchTile3);
+				}
+				
+				
 			}
 		}
 		else
@@ -631,25 +703,148 @@ public class PCG : MonoBehaviour
 				floorType =
 					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
 				var branchTile3 = allTiles[center.horzIndex + i, indexY];
-				Destroy(branchTile3);
-				branchTiles.Add
-				(CreateTileIndex(floorType
-						, center.horzIndex + i, indexY)
-					.GetComponent<Tile>());
+				var newBranch = CreateTileIndex_Ignore(floorType, center.horzIndex + i, indexY).GetComponent<Tile>();
+				if (AddBranch(newBranch))
+				{
+					Destroy(branchTile3);
+				}
+				
 			}
 		}
 		return tile;
-		
 	}
-
-	
-
-
 
 
 	/////////////////////////////////////////////////////////////
 	/// UTILITY
 
+	public void Replace360(Tile curr, Tile.Type type)
+	{
+		var tile = GetTile(curr.horzIndex, curr.vertIndex).GetComponent<Tile>();
+		for (int i = 0; i < 1; ++i)
+		{
+			for (int j = 0; j < 1; ++j)
+			{
+				tile = GetTile(curr.horzIndex + i, curr.vertIndex + j)
+					.GetComponent<Tile>();
+				CreateTileIndex_Replace(tile, type);
+				tile = GetTile(curr.horzIndex - i, curr.vertIndex - j)
+					.GetComponent<Tile>();
+				CreateTileIndex_Replace(tile, type);
+				
+
+			}
+		}
+	}
+
+	public int Check360(Tile curr, Tile.Type checkFor, int radius)
+	{
+		int numPresent = 0;
+		var tile = GetTile(curr.horzIndex + 1, curr.vertIndex).GetComponent<Tile>();
+		for (int i = 0; i < radius; ++i)
+		{
+			for(int j = 0; j < radius; ++j)
+			{
+				tile = GetTile(curr.horzIndex + i, curr.vertIndex + j)
+					.GetComponent<Tile>();
+				if (tile.type == checkFor)
+					++numPresent;
+				tile = GetTile(curr.horzIndex - i, curr.vertIndex - j)
+					.GetComponent<Tile>();
+				if (tile.type == checkFor)
+					++numPresent;
+
+			}
+		}
+		return numPresent;
+	}
+
+	// Put walls next to all floors
+	public void CreateAreaWalls(Vector2 TLCorner, Vector2 BRCorner)
+	{
+		var width = BRCorner.x - TLCorner.x;
+		var height = TLCorner.y - BRCorner.y;
+		int startX = (int)TLCorner.x;
+		int startY = (int)TLCorner.y;
+		int currX = startX;
+		int currY = startY;
+
+		for (int i = 1; i < width; ++i)
+		{
+			for (int j = 1; j < height; ++j)
+			{
+				var prevX = currX - i;
+				var prevY = currY - j;
+				var nextX = currX + i;
+				var nextY = currY + j;
+				var currTile = GetTile(currX, currY).GetComponent<Tile>();
+				if(currTile.type == Tile.Type.floor 
+					|| currTile.type == Tile.Type.floorDirty)
+				{
+					CreateTileIndex(Tile.Type.wall, prevX, prevY, currTile.gameObject);
+					CreateTileIndex(Tile.Type.wall, nextX, nextY, currTile.gameObject);
+				}
+			}
+		}
+	}
+
+	public void FillArea(Vector2 TLCorner, Vector2 BRCorner, Tile.Type fillType, bool ignore)
+	{
+		var width = Math.Abs(BRCorner.x - TLCorner.x);
+		var height = Math.Abs(TLCorner.y - BRCorner.y);
+		int startX = (int)TLCorner.x;
+		int startY = (int)TLCorner.y;
+		for(int i = 0; i < width; ++i)
+		{
+			for(int j = 0; j < height; ++j)
+			{
+				var currTile = GetTile(startX + i, startY + j)
+					.GetComponent<Tile>();
+				if(currTile.type == Tile.Type.none || ignore)
+				{
+					CreateTileIndex_Replace(currTile, fillType);
+				}
+
+			}
+		}
+	}
+
+	public GameObject GetTile(int horzIndex, int vertIndex)
+	{
+		if(CheckIndex(horzIndex, vertIndex, false))
+		{
+			return allTiles[horzIndex, vertIndex];
+		}
+		var validIndexHorz = horzIndex;
+		var validIndexVert = vertIndex;
+		if(horzIndex >= MaxMapSize)
+		{
+			validIndexHorz = MaxMapSize - 2;
+		}
+		if(horzIndex < 0)
+		{
+			validIndexHorz = 2;
+		}
+		if(vertIndex >= MaxMapSize)
+		{
+			validIndexVert = MaxMapSize - 2;
+		}
+		if(vertIndex < 0)
+		{
+			validIndexVert = 2;
+		}
+		return allTiles[validIndexHorz, validIndexVert];
+	}
+
+	public bool AddBranch(Tile tile)
+	{
+		if(branchTiles.Count < maxBranches)
+		{
+			branchTiles.Add(tile);
+			return true;
+		}
+		return false;
+	}
 
 	public Tile.DirectionValid TryPlaceRandom(Tile curr)
 	{
@@ -660,6 +855,18 @@ public class PCG : MonoBehaviour
 		return GetRand(curr);
 	}
 	
+	public Tile.DirectionValid GetRandomDirection()
+	{
+		switch(RNG.Next(0,4))
+		{
+			case (0): return Tile.DirectionValid.north;
+			case (1): return Tile.DirectionValid.east;
+			case (2): return Tile.DirectionValid.south;
+			case (3): return Tile.DirectionValid.west;
+			default: return Tile.DirectionValid.north;
+		}
+	}
+
 	public Tile.DirectionValid GetRand(Tile curr)
 	{
 		bool nValid = curr.dirs[Tile.DirectionValid.north];
@@ -687,7 +894,15 @@ public class PCG : MonoBehaviour
 	
 	public bool CheckIndex(int hIndex, int vIndex, bool ignoreRules)
 	{
-		if(hIndex > MaxMapSize - 2 
+		if(hIndex >= MaxMapSize || hIndex < 0)
+		{
+			return false;
+		}
+		if (vIndex >= MaxMapSize || vIndex < 0)
+		{
+			return false;
+		}
+		if (hIndex > MaxMapSize - 2 
 			|| hIndex < 1)
 		{
 			return false;
@@ -698,11 +913,11 @@ public class PCG : MonoBehaviour
 			return false;
 		}
 		var tile = allTiles[hIndex, vIndex].GetComponent<Tile>();
-		if (tile.type != Tile.Type.none && !ignoreRules)
+		if (tile.type == Tile.Type.outerWall)
 		{
 			return false;
 		}
-		if (tile.type == Tile.Type.outerWall)
+		if (tile.type != Tile.Type.none && !ignoreRules)
 		{
 			return false;
 		}
@@ -711,6 +926,8 @@ public class PCG : MonoBehaviour
 
 	public bool CheckNorth(Tile curr)
 	{
+		if (!curr)
+			return false;
 		if (curr.vertIndex + 1 > MaxMapSize - 2)
 		{
 			curr.dirs[Tile.DirectionValid.north] = false;
@@ -718,17 +935,17 @@ public class PCG : MonoBehaviour
 		}
 
 		var northTile = 
-			allTiles[curr.horzIndex, curr.vertIndex + 1].GetComponent<Tile>();
+			GetTile(curr.horzIndex, curr.vertIndex + 1).GetComponent<Tile>();
 
 		if (northTile.type == Tile.Type.outerWall)
 		{
-			curr.dirs[Tile.DirectionValid.north] = false;
+			//curr.dirs[Tile.DirectionValid.north] = false;
 			return false;
 		}
 
 		if(northTile.type != Tile.Type.none)
 		{
-			curr.dirs[Tile.DirectionValid.north] = false;
+			//curr.dirs[Tile.DirectionValid.north] = false;
 			return false;
 		}
 		curr.dirs[Tile.DirectionValid.north] = true;
@@ -738,13 +955,16 @@ public class PCG : MonoBehaviour
 
 	public bool CheckEast(Tile curr)
 	{
+		if (!curr)
+			return false;
 		if (curr.horzIndex + 1 > MaxMapSize - 2)
 		{
 			curr.dirs[Tile.DirectionValid.east] = false;
 			return false;
 		}
-		var eastTile =
-			allTiles[curr.horzIndex + 1, curr.vertIndex].GetComponent<Tile>();
+		var eastTile = 
+			GetTile(curr.horzIndex + 1, curr.vertIndex).GetComponent<Tile>();
+
 		if (eastTile.type == Tile.Type.outerWall)
 		{
 			curr.dirs[Tile.DirectionValid.east] = false;
@@ -762,13 +982,16 @@ public class PCG : MonoBehaviour
 
 	public bool CheckSouth(Tile curr)
 	{
+		if (!curr)
+			return false;
 		if (curr.vertIndex - 1 < 1)
 		{
 			curr.dirs[Tile.DirectionValid.south] = false;
 			return false;
 		}
-		var southTile =
-			allTiles[curr.horzIndex, curr.vertIndex - 1].GetComponent<Tile>();
+		var southTile = 
+			GetTile(curr.horzIndex, curr.vertIndex - 1).GetComponent<Tile>();
+
 		if (southTile.type == Tile.Type.outerWall)
 		{
 			curr.dirs[Tile.DirectionValid.south] = false;
@@ -786,13 +1009,15 @@ public class PCG : MonoBehaviour
 
 	public bool CheckWest(Tile curr)
 	{
+		if (!curr)
+			return false;
 		if (curr.horzIndex - 1 < 1)
 		{
 			curr.dirs[Tile.DirectionValid.west] = false;
 			return false;
 		}
-		var westTile =
-			allTiles[curr.horzIndex - 1, curr.vertIndex].GetComponent<Tile>();
+		var westTile = GetTile(curr.horzIndex - 1, curr.vertIndex).GetComponent<Tile>();
+
 		if (westTile.type == Tile.Type.outerWall)
 		{
 			curr.dirs[Tile.DirectionValid.west] = false;
@@ -810,9 +1035,97 @@ public class PCG : MonoBehaviour
 	}
 
 
-	public GameObject CreateTileIndex(Tile.Type type, int hIndex, int vIndex)
+	// Replaces specified tile
+	// TODO: Need to verify input replace doesnt need to be a ref
+	public GameObject CreateTileIndex_Replace(Tile replaceTile, Tile.Type type)
 	{
-		
+		var tile = Instantiate(tilePrefabs[type]
+			, new Vector3(replaceTile.transform.position.x
+				, replaceTile.transform.position.y, 2f)
+			, Quaternion.identity).GetComponent<Tile>();
+		tile.dirs = new Dictionary<Tile.DirectionValid, bool>();
+		// Start with all directions valid
+		tile.dirs.Add(Tile.DirectionValid.north, true);
+		tile.dirs.Add(Tile.DirectionValid.east, true);
+		tile.dirs.Add(Tile.DirectionValid.south, true);
+		tile.dirs.Add(Tile.DirectionValid.west, true);
+		tile.dirs.Add(Tile.DirectionValid.none, false);
+		tile.type = type;
+		tile.horzIndex = replaceTile.horzIndex;
+		tile.vertIndex = replaceTile.vertIndex;
+		tile.branch = false;
+
+		Destroy(allTiles[replaceTile.horzIndex, replaceTile.vertIndex]);
+		allTiles[replaceTile.horzIndex, replaceTile.vertIndex] = tile.gameObject;
+
+		// Chance determined by branchChance
+		// IE, branchChance == 10 , 10% chance, 
+		//					== 5  , 20%
+		//					== 100, 1% 
+		if (type == Tile.Type.floor || type == Tile.Type.floorDirty
+		                            || type == Tile.Type.exitPathN || tile.type == Tile.Type.exitPathE)
+		{
+			var doBranch = RNG.Next(0, branchChance);
+			if (doBranch == 0 && branchTiles.Count < maxBranches
+			                  && TryPlaceRandom(tile.GetComponent<Tile>())
+			                  != Tile.DirectionValid.none)
+			{
+				tile.branch = true;
+				AddBranch(tile);
+			}
+		}
+
+		return tile.gameObject;
+	}
+
+	// Replaces a none Tile, ignores indexing and wall rules
+	public GameObject CreateTileIndex_Ignore(Tile.Type type, int hIndex, int vIndex)
+	{
+		var replaceTile = allTiles[hIndex, vIndex];
+		var tile = Instantiate(tilePrefabs[type]
+			, new Vector3(replaceTile.transform.position.x
+				, replaceTile.transform.position.y, 2f)
+			, Quaternion.identity).GetComponent<Tile>();
+		tile.dirs = new Dictionary<Tile.DirectionValid, bool>();
+		// Start with all directions valid
+		tile.dirs.Add(Tile.DirectionValid.north, true);
+		tile.dirs.Add(Tile.DirectionValid.east, true);
+		tile.dirs.Add(Tile.DirectionValid.south, true);
+		tile.dirs.Add(Tile.DirectionValid.west, true);
+		tile.dirs.Add(Tile.DirectionValid.none, false);
+		tile.type = type;
+		tile.horzIndex = hIndex;
+		tile.vertIndex = vIndex;
+		tile.branch = false;
+
+		Destroy(allTiles[hIndex, vIndex]);
+		allTiles[hIndex, vIndex] = tile.gameObject;
+
+		// Chance determined by branchChance
+		// IE, branchChance == 10 , 10% chance, 
+		//					== 5  , 20%
+		//					== 100, 1% 
+		if (type == Tile.Type.floor || type == Tile.Type.floorDirty
+		                            || type == Tile.Type.exitPathN || tile.type == Tile.Type.exitPathE)
+		{
+			var doBranch = RNG.Next(0, branchChance);
+			if (doBranch == 0 && branchTiles.Count < maxBranches
+			                  && TryPlaceRandom(tile.GetComponent<Tile>())
+			                  != Tile.DirectionValid.none)
+			{
+				tile.branch = true;
+				AddBranch(tile);
+			}
+		}
+
+		return tile.gameObject;
+	}
+
+	public GameObject CreateTileIndex(Tile.Type type, int hIndex, int vIndex, GameObject prev)
+	{
+		// Will return false if tile to replace is not none or if is outerwall
+		if (!CheckIndex(hIndex, vIndex, false))
+			return prev;
 		var replaceTile = allTiles[hIndex, vIndex];
 		var tile = Instantiate(tilePrefabs[type]
 			, new Vector3(replaceTile.transform.position.x
@@ -830,7 +1143,7 @@ public class PCG : MonoBehaviour
 		tile.vertIndex = vIndex;
 		tile.branch = false;
 
-		Destroy(replaceTile);
+		Destroy(allTiles[hIndex, vIndex]);
 		allTiles[hIndex, vIndex] = tile.gameObject;
 
 		// Chance determined by branchChance
@@ -846,7 +1159,7 @@ public class PCG : MonoBehaviour
 			                  != Tile.DirectionValid.none)
 			{
 				tile.branch = true;
-				branchTiles.Add(tile);
+				AddBranch(tile);
 			}
 		}
 
@@ -868,14 +1181,6 @@ public class PCG : MonoBehaviour
 		tile.branch = false;
 		tile.type = type;
 		return tile.gameObject;
-	}
-
-	//Get a tile object (only walls and floors, currently)
-	GameObject GetTile(int x, int y)
-	{
-		if (Math.Abs(x) > MaxMapSize/2 || Math.Abs(y) > MaxMapSize/2)
-			return Prefabs["wall"];
-		return TileMap[(y * MaxMapSize) + x + TileMapMidPoint];
 	}
 
 	//Spawn a tile object if one isn't already there

@@ -66,8 +66,8 @@ public class Ammo : MonoBehaviour
 		var canvas = parent.debugCanvas.gameObject;
 		if(!debug)
 		{
-			var textMesh = canvas.AddComponent<TextMesh>();
-			debug = textMesh;
+			//var textMesh = canvas.AddComponent<TextMesh>();
+			//debug = textMesh;
 		}
 		
 
@@ -96,7 +96,7 @@ public class Ammo : MonoBehaviour
             var numBullets = parent.bulletsPerShot;
             // Origin angle
             var startAngle = Mathf.Atan(shotAngle.y / shotAngle.x);
-			debug.text = startAngle.ToString();
+			//debug.text = startAngle.ToString();
 			//if(startAngle < 0)
             //{
             //    startAngle = Mathf.Abs(startAngle);

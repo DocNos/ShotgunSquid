@@ -80,7 +80,7 @@ public class Hero : MonoBehaviour
             if(collidedTile.type == Tile.Type.portal)
             {
                 ExitAndRestart();
-                rb.velocity = new Vector2(0, 0);
+                //rb.velocity = new Vector2(0, 0);
             }
         }
     }
@@ -136,6 +136,8 @@ public class Hero : MonoBehaviour
         else
         {
             var lerpVelocity = Vector2.Lerp(totalVel, Vector2.zero, .6f);
+            if (Mathf.Abs(lerpVelocity.x) < 0.5 && Mathf.Abs(lerpVelocity.y) < 0.5)
+                lerpVelocity = Vector2.zero;
             rb.velocity = lerpVelocity;
         }
         

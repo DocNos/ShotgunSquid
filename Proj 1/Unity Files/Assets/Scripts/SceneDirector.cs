@@ -83,7 +83,7 @@ public class SceneDirector : MonoBehaviour
 
         // Create portal & exit paths
         var pPos = GetPortalPos(heroSpawn);
-        var portalObj = procedural.CreateTileIndex(Tile.Type.portal
+        var portalObj = procedural.CreateTileIndex_Ignore(Tile.Type.portal
             , (int)pPos.x
             , (int)pPos.y);
         // Give collider trigger to hero

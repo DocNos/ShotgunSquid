@@ -114,71 +114,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 1744}
+      Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 1874}
+      Script: {instanceID: 1824}
     - Class: 114
-      Script: {instanceID: 1960}
+      Script: {instanceID: 1910}
     - Class: 114
-      Script: {instanceID: 2020}
+      Script: {instanceID: 1970}
     - Class: 114
-      Script: {instanceID: 2060}
+      Script: {instanceID: 2010}
     - Class: 114
-      Script: {instanceID: 2124}
+      Script: {instanceID: 2074}
     - Class: 114
-      Script: {instanceID: 2320}
+      Script: {instanceID: 2270}
     - Class: 114
-      Script: {instanceID: 2350}
+      Script: {instanceID: 2300}
     - Class: 114
-      Script: {instanceID: 2420}
+      Script: {instanceID: 2370}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2486}
     - Class: 114
-      Script: {instanceID: 2704}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 3024}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3030}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3130}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3276}
+      Script: {instanceID: 3226}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3240}
     - Class: 114
-      Script: {instanceID: 3302}
+      Script: {instanceID: 3252}
     - Class: 114
-      Script: {instanceID: 3484}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3490}
+      Script: {instanceID: 3440}
     - Class: 114
-      Script: {instanceID: 3864}
+      Script: {instanceID: 3814}
     - Class: 114
-      Script: {instanceID: 4178}
+      Script: {instanceID: 4128}
     - Class: 114
-      Script: {instanceID: 4256}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4348}
+      Script: {instanceID: 4298}
     - Class: 114
-      Script: {instanceID: 4618}
+      Script: {instanceID: 4568}
     - Class: 114
-      Script: {instanceID: 4906}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 5320}
+      Script: {instanceID: 5270}
+    - Class: 114
+      Script: {instanceID: 5374}
     - Class: 114
       Script: {instanceID: 5424}
     - Class: 114
-      Script: {instanceID: 5474}
+      Script: {instanceID: 5768}
     - Class: 114
-      Script: {instanceID: 5818}
+      Script: {instanceID: 5956}
     - Class: 114
-      Script: {instanceID: 6006}
+      Script: {instanceID: 6042}
     - Class: 114
-      Script: {instanceID: 6092}
-    - Class: 114
-      Script: {instanceID: 6454}
+      Script: {instanceID: 6404}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -324,7 +324,7 @@ ScriptsOnlyBuild:
     className: PanelEventHandler
   - hash:
       serializedVersion: 2
-      Hash: d05cefd59d4d506c3f8ec222d828a83b
+      Hash: d3b20322d0b939361ac6e8270a0db4f3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ammo
@@ -444,7 +444,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: fd76893f48c72f9a2a88b56f53044494
+      Hash: 122aefdc692bce08da01534545434092
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Hero
@@ -846,11 +846,12 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 8285380186ba2771b06fb1174e8d1b86
+      Hash: 8d6b5302f44c2e54310ce64245e61a1d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PCG
   platform: 19
   scenePathNames:
   - Assets/ShotgunSquid.unity
-  playerPath: C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid.exe
+  playerPath: Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun
+    Squid.exe

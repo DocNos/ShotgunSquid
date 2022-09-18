@@ -1,417 +1,568 @@
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
 { "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 0, "tid": 1, "ts": 1663297939432556, "dur": 461446, "ph": "X", "name": "Build Player", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1663297939432994, "dur": 22885, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1663297939455883, "dur": 431844, "ph": "X", "name": "Run Backend", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1663297939887732, "dur": 6250, "ph": "X", "name": "Finish", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1663297939895240, "dur": 44, "ph": "X", "name": "", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459323011770, "dur": 1011194, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459323011806, "dur": 2731, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459323014541, "dur": 24723, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459323039266, "dur": 191094, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459323230364, "dur": 790744, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459324021111, "dur": 1853, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459324023301, "dur": 41, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1663459323126893, "dur": 91926, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1663459323127826, "dur": 36395, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1663459323205574, "dur": 3860, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1663459323209437, "dur": 9372, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1663459323210023, "dur": 8309, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1663459323222795, "dur": 1166, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1663459323222059, "dur": 1925, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459324023408, "dur": 140, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1663297939497148, "dur":2337, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939499498, "dur":388, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
-,{ "pid":12345, "tid":0, "ts":1663297939499918, "dur":47, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
-,{ "pid":12345, "tid":0, "ts":1663297939499967, "dur":469, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
-,{ "pid":12345, "tid":0, "ts":1663297939500481, "dur":1133, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939501614, "dur":2, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852173, "dur":246, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852419, "dur":132, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852551, "dur":39, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852590, "dur":25, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852615, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852619, "dur":12, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852631, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852634, "dur":12, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852646, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852649, "dur":11, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852660, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852662, "dur":12, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852674, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852677, "dur":11, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852688, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852691, "dur":17, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852708, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852740, "dur":6, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939852767, "dur":4256, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1663297939500729, "dur":898, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939501631, "dur":6669, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939508314, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1663297939508316, "dur":354, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939508688, "dur":6, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1663297939508694, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939508849, "dur":366, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509216, "dur":80, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509297, "dur":202, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509503, "dur":172, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509676, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509739, "dur":37, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509777, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509817, "dur":157, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939509976, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939510033, "dur":140, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939510174, "dur":1439, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTCore.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939511698, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939513240, "dur":5741, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTCore.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939519034, "dur":7445, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleCore.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939526488, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939526500, "dur":975, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleCore.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527543, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527605, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527719, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527774, "dur":46, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527821, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527869, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527915, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939527961, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528005, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528049, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528091, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528136, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528181, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528231, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528276, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528322, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528365, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528412, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528456, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528504, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528548, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528595, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528637, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528686, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528731, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528774, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528819, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528884, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528930, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939528980, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529026, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529075, "dur":48, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529124, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529177, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529225, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529277, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529327, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529375, "dur":48, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529423, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529471, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529514, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529563, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529608, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529656, "dur":48, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529705, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529754, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529800, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529850, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939529912, "dur":79535, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Advertisements.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939609458, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939609472, "dur":1324, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Advertisements.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939610856, "dur":28307, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939639173, "dur":13, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939639205, "dur":42390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939681649, "dur":1098, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939682755, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939682765, "dur":1053, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939683874, "dur":861, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Analytics.DataPrivacy.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939684742, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939684774, "dur":925, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Analytics.DataPrivacy.dll" }}
-,{ "pid":12345, "tid":1, "ts":1663297939685752, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
-,{ "pid":12345, "tid":1, "ts":1663297939685898, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939686002, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":1, "ts":1663297939686059, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939686113, "dur":1162, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":1, "ts":1663297939687322, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":1, "ts":1663297939687374, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939687383, "dur":1846, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":1, "ts":1663297939689279, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":1, "ts":1663297939689332, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939689341, "dur":1233, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":1, "ts":1663297939690619, "dur":144, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":1, "ts":1663297939690764, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939690807, "dur":1199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":1, "ts":1663297939692007, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939692062, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/resources.assets" }}
-,{ "pid":12345, "tid":1, "ts":1663297939692117, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939692124, "dur":1204, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/resources.assets" }}
-,{ "pid":12345, "tid":1, "ts":1663297939693372, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/level0" }}
-,{ "pid":12345, "tid":1, "ts":1663297939693429, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939693437, "dur":804, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/level0" }}
-,{ "pid":12345, "tid":1, "ts":1663297939694288, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":1, "ts":1663297939694344, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939694352, "dur":1125, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":1, "ts":1663297939695524, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":1, "ts":1663297939695575, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939695583, "dur":889, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":1, "ts":1663297939696521, "dur":191, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/boot.config" }}
-,{ "pid":12345, "tid":1, "ts":1663297939696712, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1663297939696765, "dur":155348, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939500869, "dur":767, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939501636, "dur":6675, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939508314, "dur":181, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":2, "ts":1663297939508495, "dur":147, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939508643, "dur":127, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":2, "ts":1663297939508771, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939508845, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":2, "ts":1663297939508949, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509016, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509104, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509147, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509194, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509260, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509309, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509364, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509413, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509514, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509569, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509620, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509667, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939509710, "dur":170696, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939680412, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939680448, "dur":1579, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939682077, "dur":857, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Analytics.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939682941, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939682950, "dur":1115, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Analytics.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684114, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684162, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684258, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684312, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684397, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684451, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684555, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684616, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684698, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684761, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684839, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684888, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684934, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939684981, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685065, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685112, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685154, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685199, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685272, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Newtonsoft.Json.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685318, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685368, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685414, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685459, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685504, "dur":48, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685553, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685601, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939685685, "dur":69031, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939754724, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1663297939754732, "dur":793, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":2, "ts":1663297939755573, "dur":96493, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939500905, "dur":740, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939501646, "dur":6663, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939508316, "dur":185, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":3, "ts":1663297939508501, "dur":841, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509343, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509394, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509512, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509570, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509625, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509682, "dur":36, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509719, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509762, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509807, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509847, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509908, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939509963, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939510020, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939510070, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939510116, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939510178, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939510231, "dur":1540, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityStub.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939511778, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939513732, "dur":4260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityStub.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939518052, "dur":1058, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleStub.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939519120, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939519132, "dur":801, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleStub.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939519980, "dur":5658, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525639, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525701, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525753, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525796, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525850, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525892, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525944, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939525987, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939526035, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939526077, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939526140, "dur":43, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939526184, "dur":120807, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Monetization.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939647036, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939647052, "dur":34537, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Monetization.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939681695, "dur":1101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Device.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939682803, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939682812, "dur":1100, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Device.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939683962, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684009, "dur":101, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684112, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684165, "dur":104, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684270, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684323, "dur":80, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684404, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684452, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684532, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684592, "dur":73, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684666, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684717, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684795, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684845, "dur":82, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684928, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939684983, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939685099, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939685153, "dur":112, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939685266, "dur":35883, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Purchasing.Common.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939721158, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1663297939721170, "dur":796, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Purchasing.Common.dll" }}
-,{ "pid":12345, "tid":3, "ts":1663297939722008, "dur":130087, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939501283, "dur":380, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939501663, "dur":6664, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939508329, "dur":177, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1663297939508507, "dur":124, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939508632, "dur":183, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":4, "ts":1663297939508815, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939508892, "dur":316, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1663297939509213, "dur":270, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939509609, "dur":326, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939509936, "dur":343, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939510287, "dur":116605, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939626903, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939626930, "dur":1167, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939628166, "dur":1070, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Networking.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939629246, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939629259, "dur":957, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Networking.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939630262, "dur":60668, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Internal.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939690938, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939690949, "dur":954, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Internal.dll" }}
-,{ "pid":12345, "tid":4, "ts":1663297939691957, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/resources.assets.resS" }}
-,{ "pid":12345, "tid":4, "ts":1663297939692034, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1663297939692044, "dur":6391, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/resources.assets.resS" }}
-,{ "pid":12345, "tid":4, "ts":1663297939698483, "dur":153615, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939501150, "dur":503, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939501653, "dur":6686, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939508342, "dur":283, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":5, "ts":1663297939508625, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939508699, "dur":142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":5, "ts":1663297939508841, "dur":108, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939508950, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939509053, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939509120, "dur":305, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939509425, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939509609, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939509682, "dur":201, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939509884, "dur":624, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939510508, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939510566, "dur":77509, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Codeless.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939588089, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939588117, "dur":1445, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Codeless.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939589628, "dur":15991, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Threading.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939605630, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939605644, "dur":959, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Threading.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939606651, "dur":48043, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939654707, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939654721, "dur":26906, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939681681, "dur":27961, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939709680, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1663297939709693, "dur":1240, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.dll" }}
-,{ "pid":12345, "tid":5, "ts":1663297939710985, "dur":141105, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939501322, "dur":348, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939501670, "dur":6722, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508392, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508497, "dur":122, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508625, "dur":109, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508734, "dur":74, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508809, "dur":99, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508908, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939508984, "dur":91, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509075, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509120, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509207, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509257, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509304, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509362, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509406, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509447, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509494, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509534, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509581, "dur":42, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509624, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509669, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509711, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509752, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509792, "dur":184, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939509977, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939510034, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939510094, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939510142, "dur":37461, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTStub.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939547614, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939547638, "dur":1036, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTStub.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939548722, "dur":301308, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939850078, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1663297939850097, "dur":1860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":6, "ts":1663297939852026, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
-,{ "pid":12345, "tid":6, "ts":1663297939852028, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939501371, "dur":303, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939501674, "dur":6676, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508352, "dur":154, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508506, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508626, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508723, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508793, "dur":111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508904, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939508975, "dur":93, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509068, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509113, "dur":81, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509195, "dur":41, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509236, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509284, "dur":39, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509323, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509369, "dur":131, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509823, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509889, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939509939, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939510001, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939510058, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939510116, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939510174, "dur":102963, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Stores.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939613147, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939613173, "dur":1211, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Stores.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939614429, "dur":65745, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Registration.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939680201, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939680225, "dur":1552, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Registration.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939681825, "dur":27866, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Configuration.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939709699, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1663297939709708, "dur":1529, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Configuration.dll" }}
-,{ "pid":12345, "tid":7, "ts":1663297939711286, "dur":140789, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939501422, "dur":257, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939501680, "dur":6640, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939508323, "dur":377, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":8, "ts":1663297939508701, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939508865, "dur":170, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":8, "ts":1663297939509035, "dur":44, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939509080, "dur":899, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid.exe" }}
-,{ "pid":12345, "tid":8, "ts":1663297939509980, "dur":148, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939510130, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939510202, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939510251, "dur":1285, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityCore.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939511553, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939512731, "dur":5451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityCore.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939518226, "dur":15500, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleMacosStub.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939533818, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939533844, "dur":948, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleMacosStub.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939534842, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939534910, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939534958, "dur":95506, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939630472, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939630484, "dur":50390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939680930, "dur":1180, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939682118, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939682130, "dur":1060, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939683243, "dur":77247, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Analytics.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939760497, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1663297939760507, "dur":777, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Jacob/Desktop/Fall22/DES 214/Proj 1/Build 1.5/Shotgun Squid_Data/Managed/Unity.Services.Analytics.dll" }}
-,{ "pid":12345, "tid":8, "ts":1663297939761339, "dur":90754, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1663297939861298, "dur":4231, "ph":"X", "name": "ProfilerWriteOutput" }
-,{ "pid": 0, "tid": 1, "ts": 1663297939895470, "dur": 1927, "ph": "X", "name": "backend_profiler0.traceevents", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1663297939895202, "dur": 2248, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+,{ "pid":12345, "tid":0, "ts":1663459323266912, "dur":809, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459323267727, "dur":58, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1663459323267797, "dur":18, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1663459323267816, "dur":637, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1663459323268502, "dur":513, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459323269015, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324013654, "dur":417, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014071, "dur":27, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014098, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014102, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014108, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014110, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014115, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014116, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014122, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014123, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014128, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014129, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014134, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014136, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014141, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014142, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014147, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014148, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014153, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014154, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014159, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014161, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014166, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014167, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014172, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014186, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324014235, "dur":1423, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1663459323268678, "dur":348, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323269031, "dur":3243, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323272296, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1663459323272297, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323272358, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1663459323272363, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323272649, "dur":1937, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1663459323274588, "dur":131, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1663459323274722, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323274767, "dur":905, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1663459323275722, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323275771, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323275789, "dur":75210, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323351060, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323351085, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323351091, "dur":35985, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323387093, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323387109, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323387117, "dur":32994, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323420125, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323420142, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323420151, "dur":86521, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323506687, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323506702, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323506710, "dur":36850, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323543574, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323543599, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323543607, "dur":112109, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323655730, "dur":5446, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323661182, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323661194, "dur":512, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323661717, "dur":10857, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323672580, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323672590, "dur":786, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323673389, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323673405, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323673413, "dur":109054, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323782481, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323782497, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1663459323782506, "dur":89078, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1663459323871601, "dur":142132, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323268782, "dur":268, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323269050, "dur":3231, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323272287, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1663459323272411, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323273062, "dur":1519, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1663459323274657, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":2, "ts":1663459323274716, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323274726, "dur":6683, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":2, "ts":1663459323281470, "dur":68891, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":2, "ts":1663459323350367, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323350376, "dur":2347, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":2, "ts":1663459323352773, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323352790, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323352796, "dur":39879, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323392692, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323392769, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323392779, "dur":70709, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323463503, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323463519, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323463527, "dur":24101, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323487648, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323487672, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323487681, "dur":26983, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323514680, "dur":59099, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Monetization.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323573786, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323573797, "dur":1065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Monetization.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323574877, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323574918, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323574926, "dur":23654, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323598594, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323598611, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323598619, "dur":116736, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323715371, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323715388, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323715402, "dur":83159, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323798577, "dur":26796, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Purchasing.Common.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323825379, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323825388, "dur":872, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Purchasing.Common.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323826273, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459323826290, "dur":4, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1663459323826301, "dur":187289, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":2, "ts":1663459324013609, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":2, "ts":1663459324013611, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323268717, "dur":318, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323269036, "dur":3244, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323272288, "dur":149, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":3, "ts":1663459323272439, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323280704, "dur":75383, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":3, "ts":1663459323356236, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323356285, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323356297, "dur":48253, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323404575, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323404593, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323404601, "dur":47966, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323452582, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323452604, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323452613, "dur":25662, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323478292, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323478309, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323478318, "dur":27198, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323505532, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323505580, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323505589, "dur":54033, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323559638, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323559652, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323559661, "dur":61604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323621280, "dur":210621, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323831907, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323831918, "dur":751, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323832681, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323832696, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1663459323832703, "dur":142234, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1663459323974949, "dur":38709, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323268760, "dur":286, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323269046, "dur":3241, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323272288, "dur":140, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1663459323272431, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323273927, "dur":1404, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1663459323275443, "dur":1408, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323276858, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323276868, "dur":74803, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323351723, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323351744, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323351750, "dur":43020, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323394789, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323394808, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323394817, "dur":63651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323458480, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323458497, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323458504, "dur":33958, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323492474, "dur":4304, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityCore.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323496785, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323496796, "dur":475, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityCore.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323497282, "dur":41990, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Codeless.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323539292, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323539305, "dur":2209, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Codeless.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323541540, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323541557, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323541566, "dur":42419, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323583998, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323584012, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323584018, "dur":56958, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323640994, "dur":32552, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323673549, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323673556, "dur":411, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323673978, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323673991, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1663459323673997, "dur":219277, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":4, "ts":1663459323893290, "dur":120407, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323268818, "dur":239, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323269057, "dur":3233, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323272291, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1663459323272373, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323272874, "dur":1953, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1663459323274879, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1663459323274934, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323274943, "dur":6760, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1663459323281881, "dur":68416, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323350302, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323350315, "dur":63853, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323414182, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323414201, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323414209, "dur":43472, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323457698, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323457722, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323457730, "dur":54603, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323512356, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323512373, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323512419, "dur":53101, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323565542, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323565559, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323565569, "dur":44296, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323609881, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323609896, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323609904, "dur":41127, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323651048, "dur":43749, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323694803, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323694814, "dur":532, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323695360, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323695375, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323695381, "dur":81054, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323776459, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323776482, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1663459323776490, "dur":105592, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":5, "ts":1663459323882095, "dur":131611, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323268854, "dur":207, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323269061, "dur":3231, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323272293, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1663459323272419, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323273764, "dur":777, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1663459323274600, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1663459323274661, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323274682, "dur":8431, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1663459323283184, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323283213, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323350236, "dur":28143, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323378393, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323378411, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323378420, "dur":27640, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323406090, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323406114, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323406123, "dur":52112, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323458252, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323458273, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323458283, "dur":35180, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323493476, "dur":67002, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323560482, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323560490, "dur":2824, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323563329, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323563371, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323563380, "dur":33355, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323596753, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323596769, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323596778, "dur":55664, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323652456, "dur":17768, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323670230, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323670241, "dur":458, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323670709, "dur":10267, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Analytics.DataPrivacy.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323680982, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323680995, "dur":1466, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Analytics.DataPrivacy.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323682476, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323682494, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323682503, "dur":66112, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323748632, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323748652, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1663459323748662, "dur":163433, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1663459323912117, "dur":101572, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323268903, "dur":164, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323269067, "dur":3228, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323272295, "dur":139, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":7, "ts":1663459323272438, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323280439, "dur":71827, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":7, "ts":1663459323352318, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323352387, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323352393, "dur":54034, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323406507, "dur":155, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323406667, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323406708, "dur":139857, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323546583, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323546613, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323546642, "dur":27838, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323574497, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323574513, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323574523, "dur":89312, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323663853, "dur":26815, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323690671, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323690695, "dur":3682, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323694388, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323694408, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323694417, "dur":111882, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323806312, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323806337, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323806346, "dur":34783, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323841143, "dur":71246, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323912394, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1663459323912403, "dur":518, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":7, "ts":1663459323912934, "dur":100739, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323268936, "dur":138, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323269074, "dur":3223, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323272298, "dur":140, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1663459323272441, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323350365, "dur":1673, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1663459323352087, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323352112, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323352118, "dur":55262, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323407400, "dur":106381, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323513785, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323513793, "dur":1305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323515109, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323515125, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323515133, "dur":22420, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323537569, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323537586, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323537595, "dur":32526, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323570574, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323570599, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323570609, "dur":23283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323593904, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323593918, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323593927, "dur":31279, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323625221, "dur":900, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323626126, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323626136, "dur":605, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323626753, "dur":38556, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323665315, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323665331, "dur":1263, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323666607, "dur":1433, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323668049, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323668060, "dur":1682, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323669758, "dur":84682, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Analytics.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323754447, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323754460, "dur":779, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Analytics.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323755258, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323755290, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1663459323755297, "dur":168631, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":8, "ts":1663459323923939, "dur":89728, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323268977, "dur":105, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323269083, "dur":3216, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323272300, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":9, "ts":1663459323272450, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323351502, "dur":759, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":9, "ts":1663459323352310, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323352332, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323352338, "dur":26792, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323379145, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323379166, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323379174, "dur":38986, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323418174, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323418190, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323418198, "dur":55623, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323473838, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323473854, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323473863, "dur":38577, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323512451, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323512465, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323512471, "dur":39333, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323551816, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323551830, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323551836, "dur":41646, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323593497, "dur":1926, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323595429, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323595442, "dur":47693, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323643149, "dur":35143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323678299, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323678310, "dur":13267, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323691596, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323691610, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323691616, "dur":159135, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":9, "ts":1663459323850768, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":9, "ts":1663459323850847, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323850869, "dur":425, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":9, "ts":1663459323851304, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":9, "ts":1663459323851319, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323851325, "dur":1290, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":9, "ts":1663459323852626, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":9, "ts":1663459323852644, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323852650, "dur":1044, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":9, "ts":1663459323853705, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":9, "ts":1663459323853717, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323853723, "dur":639, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":9, "ts":1663459323854372, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":9, "ts":1663459323854441, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323854446, "dur":494, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":9, "ts":1663459323854949, "dur":4328, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":9, "ts":1663459323859283, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323859314, "dur":517, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":9, "ts":1663459323859843, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":9, "ts":1663459323859855, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323859860, "dur":1728, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":9, "ts":1663459323861601, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/resources.assets" }}
+,{ "pid":12345, "tid":9, "ts":1663459323861613, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323861620, "dur":547, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/resources.assets" }}
+,{ "pid":12345, "tid":9, "ts":1663459323862177, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/level0" }}
+,{ "pid":12345, "tid":9, "ts":1663459323862189, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323862194, "dur":497, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/level0" }}
+,{ "pid":12345, "tid":9, "ts":1663459323862701, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":9, "ts":1663459323862714, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323862719, "dur":727, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":9, "ts":1663459323863456, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":9, "ts":1663459323863468, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323863474, "dur":478, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":9, "ts":1663459323863962, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/boot.config" }}
+,{ "pid":12345, "tid":9, "ts":1663459323864025, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1663459323864030, "dur":421, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/boot.config" }}
+,{ "pid":12345, "tid":9, "ts":1663459323864461, "dur":149192, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323269007, "dur":85, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323269093, "dur":3192, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323272288, "dur":122, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":10, "ts":1663459323272414, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323273527, "dur":1428, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":10, "ts":1663459323275060, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":10, "ts":1663459323275126, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323275134, "dur":716, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":10, "ts":1663459323276006, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323276081, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323276086, "dur":90854, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323367005, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323367033, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323367041, "dur":46421, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323413477, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323413495, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323413503, "dur":46932, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323460563, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323460581, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323460589, "dur":28287, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323488891, "dur":9518, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTCore.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323498413, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323498421, "dur":1365, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTCore.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323499808, "dur":761, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleStub.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323500575, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323500585, "dur":465, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleStub.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323501060, "dur":1363, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleMacosStub.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323502428, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323502437, "dur":427, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleMacosStub.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323502876, "dur":901, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleCore.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323503780, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323503787, "dur":543, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.AppleCore.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323504343, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323504357, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323504362, "dur":47412, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323551792, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323551813, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323551822, "dur":30152, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323581990, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323582010, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323582019, "dur":31996, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323614027, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323614042, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323614051, "dur":30860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323644922, "dur":14505, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323659434, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323659450, "dur":665, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323660127, "dur":30293, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323690424, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323690430, "dur":975, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323691418, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323691433, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323691440, "dur":101035, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323792492, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323792507, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1663459323792517, "dur":85942, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":10, "ts":1663459323878473, "dur":135178, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323269051, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323269052, "dur":3237, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323272289, "dur":139, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1663459323272432, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323274160, "dur":1007, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1663459323275305, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":11, "ts":1663459323275357, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323275364, "dur":6275, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":11, "ts":1663459323281694, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":11, "ts":1663459323281743, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323281766, "dur":72411, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":11, "ts":1663459323354250, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323354279, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323354288, "dur":107301, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323461605, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323461621, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323461629, "dur":26007, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323487656, "dur":1199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTStub.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323488905, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323488915, "dur":399, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.WinRTStub.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323489325, "dur":64426, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Stores.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323553757, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323553768, "dur":1067, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.Stores.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323554850, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323554868, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323554878, "dur":28383, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323583284, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323583308, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323583318, "dur":33831, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323617163, "dur":74915, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323692083, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323692094, "dur":5007, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323697115, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323697175, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323697184, "dur":28533, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323725733, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323725748, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323725756, "dur":30685, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323756452, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323756466, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1663459323756473, "dur":143449, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":11, "ts":1663459323899936, "dur":113744, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323269091, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323269092, "dur":3209, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323272302, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1663459323272410, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323273321, "dur":1310, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1663459323274694, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":12, "ts":1663459323274748, "dur":22, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323274777, "dur":6646, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":12, "ts":1663459323281521, "dur":539, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid.exe" }}
+,{ "pid":12345, "tid":12, "ts":1663459323282064, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323282071, "dur":69698, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid.exe" }}
+,{ "pid":12345, "tid":12, "ts":1663459323351781, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323351798, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323351803, "dur":51880, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323403698, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323403715, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323403724, "dur":43098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323446840, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323446858, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323446888, "dur":44872, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323491775, "dur":7767, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityStub.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323499545, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323499553, "dur":3811, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Purchasing.SecurityStub.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323503419, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323503458, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323503474, "dur":29360, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323532851, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323532866, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323532875, "dur":30623, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323563653, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323563694, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323563964, "dur":49545, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323613524, "dur":76589, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Advertisements.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323690119, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323690131, "dur":4995, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/UnityEngine.Advertisements.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323695139, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323695154, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323695161, "dur":72050, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323767231, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323767249, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323767257, "dur":36565, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323803836, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323803852, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1663459323803861, "dur":85014, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Z:/SVN/Fall22/DES 214/ShotgunSquid/Proj 1/Build 2.0- 101x101/Shotgun Squid_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":12, "ts":1663459323888890, "dur":124825, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1663459324016705, "dur":1647, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1663459324023599, "dur": 956, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1663459324023278, "dur": 1302, "ph": "X", "name": "Write chrome-trace events", "args": {} },
