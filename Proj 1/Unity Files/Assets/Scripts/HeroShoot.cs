@@ -53,9 +53,9 @@ public class HeroShoot : MonoBehaviour
             parent.shotgun.transform.localScale = transform.localScale;
         }
         
-        var vecToMouse = worldMousePos - transform.position;
-        var angle = Mathf.Atan(transform.up.y / transform.up.x);
-        var rotate = transform.rotation.eulerAngles.z;
+        //var vecToMouse = worldMousePos - transform.position;
+        //var angle = Mathf.Atan(transform.up.y / transform.up.x);
+        //var rotate = transform.rotation.eulerAngles.z;
         
         var shotSprite = parent.shotgun.GetComponent<SpriteRenderer>();
         if (shotCooldownTimer.atTime && Input.GetMouseButton(0))

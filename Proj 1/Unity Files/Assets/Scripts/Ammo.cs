@@ -63,11 +63,12 @@ public class Ammo : MonoBehaviour
 
     public void Shoot(SceneDirector.Teams team, Vector3 shotAngle)
     {
+		shotAngle.z = 0;
 		var canvas = parent.debugCanvas.gameObject;
 		if(!debug)
 		{
-			//var textMesh = canvas.AddComponent<TextMesh>();
-			//debug = textMesh;
+			var textMesh = canvas.AddComponent<TextMesh>();
+			debug = textMesh;
 		}
 		
 
@@ -79,6 +80,7 @@ public class Ammo : MonoBehaviour
             bulletSpawn.z = 0;
 
             var bulletVelocity = shotAngle * parent.bulletSpeed;
+			bulletVelocity.z = 0;
             
             // Create origin bullet
             var centerBullet =
@@ -90,35 +92,25 @@ public class Ammo : MonoBehaviour
             bulletComp.RB =  centerBullet.GetComponent<Rigidbody2D>();
             bulletComp.team = team;
             bulletComp.BulletRangeLeft = bulletComp.BulletRange;
-            bulletComp.RB.velocity = (playerVel + bulletVelocity);
+            bulletComp.RB.velocity = (bulletVelocity);
 
 
             var numBullets = parent.bulletsPerShot;
-            // Origin angle
-            var startAngle = Mathf.Atan(shotAngle.y / shotAngle.x);
-			//debug.text = startAngle.ToString();
-			//if(startAngle < 0)
-            //{
-            //    startAngle = Mathf.Abs(startAngle);
-            //    if(shotAngle.x < 0 && shotAngle.y > 0)
-            //    {
-            //        startAngle += (Mathf.PI / 2);
-            //    }
-            //    if(shotAngle.x < 0 && shotAngle.y < 0)
-            //    {
-            //        startAngle += (Mathf.PI);
-            //    }
-            //    if (shotAngle.y < 0 && shotAngle.x > 0)
-            //    {
-            //        startAngle += (3 * Mathf.PI / 2);
-            //    }
-            //}
-            // Half circle, split among bullets and centered on 
+			// Origin angle
+			var startAngle = Mathf.Atan(shotAngle.y / shotAngle.x);
+            if(shotAngle.x < 0 && shotAngle.y < 0)
+            {
+                startAngle += Mathf.PI;
+                startAngle *= -1;
+            }
+
+			debug.text = startAngle.ToString();
+			// Half circle, split among bullets and centered on 
             // initial shot angle. 
-            var angleDivision = (((Mathf.PI/2)) / numBullets) ;
+            var angleDivision = (((Mathf.PI / 2)) / numBullets) ;
             for (int i = 1; i <= numBullets / 2; ++i)
             {
-                startAngle = (startAngle < 0) ? (-startAngle) : (startAngle);
+                //startAngle = (startAngle < 0) ? (-startAngle) : (startAngle);
                 // Increment by this angle on the half-circle
                 var angleCW = (angleDivision * i) + startAngle;
                 // Decompose shot angle vector
@@ -142,7 +134,7 @@ public class Ammo : MonoBehaviour
                     new Vector3(bulletVelocity.x * Mathf.Cos(angleCW)
                                 , bulletVelocity.y * Mathf.Sin(angleCW));
                 // Apply velocity and offset from player
-                bulletCompCW.RB.velocity = (playerVel + velocityCW);
+                bulletCompCW.RB.velocity = (velocityCW);
 
 
                 // Create bullet wrapping counter clockwise from origin \\
@@ -163,26 +155,9 @@ public class Ammo : MonoBehaviour
                 var velocityCCW =
                     new Vector3(bulletVelocity.x * Mathf.Cos(angleCCW)
                         , bulletVelocity.y * Mathf.Sin(angleCCW));
-                bulletCompCCW.RB.velocity = (playerVel + velocityCCW);
+                bulletCompCCW.RB.velocity = (velocityCCW);
 
-            }
-
-            
-
-            var pScale = parent.transform.localScale.x;
-            
-            
-
-
-            //Rotate bullet to match player direction
-            //var fwd = RotateVector(bulletSpawn + playerVel, rotate);
-            //var fwdNrml = fwd.normalized;
-            ////bullet.transform.up = (fwd);
-            ////bullet.transform.position = new Vector3(fwd.x, fwd.y, parent.transform.position.z + 0.5f);
-            ////Add bullet velocity
-            //bullet.GetComponent<Rigidbody2D>().velocity 
-            //    = (fwdNrml * (BulletSpeed + (parent.GetComponent<HeroStats>().Speed 
-            //            - parent.GetComponent<HeroStats>().StartingSpeed) * 2));
+            }                     
 
             ammoSprites[currBullets - 1].GetComponent<SpriteRenderer>().enabled = false;
             --currBullets;
