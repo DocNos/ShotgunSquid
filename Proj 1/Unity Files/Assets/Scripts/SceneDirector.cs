@@ -55,6 +55,7 @@ public class SceneDirector : MonoBehaviour
         var randY = procedural.RNG.Next(eigthSize, quarterSize);
         var randX = procedural.RNG.Next(eigthSize, procedural.MaxMapSize);
         var startTile = procedural.allTiles[randX, randY].GetComponent<Tile>();
+        procedural.playerSpawnTile = startTile;
         procedural.SpawnRoom(startTile, 7, 5);
         var heroSpawn = startTile.gameObject.transform.position;
         heroSpawn.z = -1;
@@ -70,6 +71,7 @@ public class SceneDirector : MonoBehaviour
         hero = heroObj.GetComponent<Hero>();
         hero.director = this;
 		hero.debugCanvas = canvas;
+        hero.GetComponentInChildren<Collider2D>().tag = "Player";
 
         // Set cam to follow hero
         cam.GetComponent<CameraFollow>().ObjectToFollow = heroObj.transform;

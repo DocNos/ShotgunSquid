@@ -263,6 +263,7 @@ MonoBehaviour:
   floorTiles: []
   branchTiles: []
   branchChance: 10
+  playerSpawnTile: {fileID: 0}
 --- !u!114 &204671492
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,14 +35,22 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        var wallTile = col.GetComponent<Tile>();
+        if (wallTile && (wallTile.type == Tile.Type.wall
+                         || wallTile.type == Tile.Type.outerWall))
+        {
+            Destroy(gameObject);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+        }
         ////No friendly fire
         if (col.isTrigger || col.tag == team.ToString()
             || col.GetComponent<Bullet>())
         {
             return;
         }
-            
-        Destroy(gameObject);
+        
+        
     }
 
     public Vector2 RotateVector(Vector2 vec, float Angle)

@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour
     public enum Type 
     { floor, wall, special
             , portal, none, floorDirty
-            , outerWall, exitPathN, exitPathE };
+            , outerWall, exitPathN, exitPathE};
     // Dir checked -> From this tile, which are valid directions to take.
     public enum DirectionValid { north, east, south, west, none };
     // Index in the level tile array
@@ -17,6 +17,8 @@ public class Tile : MonoBehaviour
     public bool branch;
     public Dictionary<DirectionValid, bool> dirs;
     public Type type;
+    public bool enemyTile;
+    public Enemy.eType typeEnemy;
 
     // Start is called before the first frame update
     void Start()

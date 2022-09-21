@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEditor;
@@ -15,6 +16,7 @@ public class PCG : MonoBehaviour
 
 	public Dictionary<string, GameObject> Prefabs; //Dictionary of all PCG prefabs
 	private Dictionary<Tile.Type, GameObject> tilePrefabs;
+	private Dictionary<Enemy.eType, GameObject> enemyPrefabs;
 	private GameObject[] TileMap; //Tilemap array to make sure we don't put walls over floors
 	private int TileMapMidPoint; //The 0,0 point of the tile map array
 	public System.Random RNG;
@@ -28,8 +30,8 @@ public class PCG : MonoBehaviour
 	public int branchChance; 
 	private int maxBranches; // Currently tied to numRooms * 2
 	private int numRooms;
-	
 
+	public Tile playerSpawnTile;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -40,6 +42,7 @@ public class PCG : MonoBehaviour
 		floorTiles = new GameObject[MaxMapSize * MaxMapSize];
 		allTiles = new GameObject[MaxMapSize, MaxMapSize];
 		tilePrefabs = new Dictionary<Tile.Type, GameObject>();
+		enemyPrefabs = new Dictionary<Enemy.eType, GameObject>();
 		branchTiles = new List<Tile>();
 
 		tilePrefabs.Add(Tile.Type.none, Resources.Load<GameObject>("Prefabs/NoTile"));
@@ -68,6 +71,18 @@ public class PCG : MonoBehaviour
 
 		tilePrefabs.Add(Tile.Type.exitPathE, Resources.Load<GameObject>("Prefabs/DungeonExitPathEast"));
 		tilePrefabs[Tile.Type.exitPathE].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.ant, Resources.Load<GameObject>("Prefabs/antEnemy"));
+		enemyPrefabs[Enemy.eType.ant].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.bomb, Resources.Load<GameObject>("Prefabs/healerEnemy"));
+		enemyPrefabs[Enemy.eType.bomb].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.healer, Resources.Load<GameObject>("Prefabs/bombEnemy"));
+		enemyPrefabs[Enemy.eType.healer].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.boss, Resources.Load<GameObject>("Prefabs/boss"));
+		enemyPrefabs[Enemy.eType.boss].transform.localScale = new Vector3(GridSize * 1.5f, GridSize * 1.5f , 1.0f);
 
 		//Load all the prefabs we need for map generation (note that these must be in a "Resources" folder)
 		Prefabs = new Dictionary<string, GameObject>();
@@ -711,7 +726,25 @@ public class PCG : MonoBehaviour
 				
 			}
 		}
+
+		if(center != playerSpawnTile)
+		{
+			createEnemy(Enemy.eType.ant, center.gameObject.transform.position);
+		}
+		
+		
+		
 		return tile;
+	}
+
+	public Enemy createEnemy(Enemy.eType type, Vector3 pos)
+	{
+		var enemy =
+			Instantiate(enemyPrefabs[type]);
+		enemy.transform.position = new Vector3(pos.x, pos.y, 1.0f);
+		var enemyComp = enemy.GetComponent<Enemy>();
+		enemyComp.director = parent;
+		return enemy.GetComponent<Enemy>();
 	}
 
 
