@@ -71,7 +71,10 @@ public class SceneDirector : MonoBehaviour
         hero = heroObj.GetComponent<Hero>();
         hero.director = this;
 		hero.debugCanvas = canvas;
-        hero.GetComponentInChildren<Collider2D>().tag = "Player";
+        foreach (var col in hero.GetComponentsInChildren<Collider2D>())
+        {
+            col.tag = Teams.Player.ToString();
+        }
 
         // Set cam to follow hero
         cam.GetComponent<CameraFollow>().ObjectToFollow = heroObj.transform;

@@ -45,20 +45,39 @@ public class EnemyShoot : MonoBehaviour
                     , transform.localScale.y);
         }
 
-        //var vecToMouse = worldMousePos - transform.position;
-        //var angle = Mathf.Atan(transform.up.y / transform.up.x);
-        //var rotate = transform.rotation.eulerAngles.z;
+        EnemyAmmo.ShotPattern pattern = EnemyAmmo.ShotPattern.straight;
 
-        
+        switch(parent.type)
+        {
+            case (Enemy.eType.antEasy): pattern = EnemyAmmo.ShotPattern.straight; break;
+            case (Enemy.eType.antMedium): pattern = EnemyAmmo.ShotPattern.straight; break;
+            case (Enemy.eType.slime): pattern = EnemyAmmo.ShotPattern.circle; break;
+            case (Enemy.eType.healer): pattern = EnemyAmmo.ShotPattern.straight; break;
+            case (Enemy.eType.chicken): pattern = EnemyAmmo.ShotPattern.egg;  break;
+            case (Enemy.eType.skeleton): pattern = EnemyAmmo.ShotPattern.skeleHead; break;
+            case (Enemy.eType.boss): pattern = EnemyAmmo.ShotPattern.boss;  break;
+        }
+        var distanceToTarget = Vector2.Distance(parent.target.gameObject.transform.position, parent.gameObject.transform.position);
         if (shotCooldownTimer.atTime && parent.targetInRange)
         {
-            parent.ammo.Shoot(EnemyAmmo.ShotPattern.straight);
-            shotCooldownTimer.Reset();
-            shotCooldownTimer.doUpdate = false;
+            if(parent.type != Enemy.eType.slime)
+            {
+                parent.ammo.Shoot(pattern);
+                shotCooldownTimer.Reset();
+                shotCooldownTimer.doUpdate = false;
+            }
+            else if(distanceToTarget <= 2.5f)
+            {
+                parent.ammo.Shoot(pattern);
+                shotCooldownTimer.Reset();
+                shotCooldownTimer.doUpdate = false;
+            }
+            
         }
         else
         {
             shotCooldownTimer.doUpdate = true;
         }
+        
     }
 }

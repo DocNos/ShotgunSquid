@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
-    public enum eType { ant, healer, bomb, boss};
+    public enum eType { antEasy, antMedium, healer, bomb, boss, slime, chicken, skeleton};
     public eType type;
     public Rigidbody2D rb;
 

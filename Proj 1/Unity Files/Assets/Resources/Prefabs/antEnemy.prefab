@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dded01f92e939294c8a24ca8df4995b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   rb: {fileID: 8182125102271145520}
   EnemyHealthBarPrefab: {fileID: 0}
   ammo: {fileID: 0}
@@ -268,6 +268,7 @@ MonoBehaviour:
   idleTime: 2.5
   moveSpeed: 0.75
   targetPoint: {x: 0, y: 0}
+  idleCenter: {x: 0, y: 0}
   aggroRange: 10
   StartingHealth: 3
 --- !u!114 &4416719911614901264

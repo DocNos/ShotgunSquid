@@ -65,11 +65,11 @@ public class Ammo : MonoBehaviour
     {
 		shotAngle.z = 0;
 		var canvas = parent.debugCanvas.gameObject;
-		if(!debug)
-		{
-			var textMesh = canvas.AddComponent<TextMesh>();
-			debug = textMesh;
-		}
+		//if(!debug)
+		//{
+		//	var textMesh = canvas.AddComponent<TextMesh>();
+		//	debug = textMesh;
+		//}
 		
 
         if(currBullets > 0)
@@ -104,7 +104,7 @@ public class Ammo : MonoBehaviour
                 startAngle *= -1;
             }
 
-			debug.text = startAngle.ToString();
+			//debug.text = startAngle.ToString();
 			// Half circle, split among bullets and centered on 
             // initial shot angle. 
             var angleDivision = (((Mathf.PI / 2)) / numBullets) ;

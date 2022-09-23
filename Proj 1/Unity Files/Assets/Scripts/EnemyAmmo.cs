@@ -8,11 +8,25 @@ public class EnemyAmmo : MonoBehaviour
     public GameObject bulletPrefab;
     public int bulletsPerShot;
     public float bulletSpeed;
-    public enum ShotPattern{ straight, circle, wave};
+    public enum ShotPattern{ straight, circle, wave, skeleHead, egg, boss};
 
     void Start()
     {
-        bulletPrefab = Resources.Load<GameObject>("Prefabs/BulletPrefab");
+        if(parent.type == Enemy.eType.skeleton)
+        {
+            bulletPrefab = Resources.Load<GameObject>("Prefabs/SkeleHead");
+            bulletPrefab.transform.localScale = new Vector3(parent.director.procedural.GridSize * 1.25f, parent.director.procedural.GridSize * 1.25f);
+        }
+        else if(parent.type == Enemy.eType.slime)
+        {
+            bulletPrefab = Resources.Load<GameObject>("Prefabs/SlimeBullet");
+            bulletPrefab.transform.localScale = new Vector3(parent.director.procedural.GridSize * 0.75f, parent.director.procedural.GridSize * 0.75f);
+        }
+        else
+        {
+            bulletPrefab = Resources.Load<GameObject>("Prefabs/BulletPrefab");
+        }
+        
     }
 
     // Update is called once per frame
@@ -28,6 +42,9 @@ public class EnemyAmmo : MonoBehaviour
             case (ShotPattern.straight): PatternLine(); break;
             case (ShotPattern.circle): PatternCircle(); break;
             case (ShotPattern.wave): PatternWave(); break;
+            case (ShotPattern.skeleHead): PatternSkele(); break;
+            case (ShotPattern.egg): PatternEgg(); break;
+            case (ShotPattern.boss): PatternBoss(); break;
         }
     }
 
@@ -63,10 +80,84 @@ public class EnemyAmmo : MonoBehaviour
 
     public void PatternCircle()
     {
+        var trans = parent.GetComponentInChildren<RectTransform>();
+        Vector2 pos = gameObject.transform.position;
+        Vector2 bulletSpawn = trans.position;
+        //Vector2 playerPos = parent.target.gameObject.transform.position;
+        //playerPos += (parent.target.rb.velocity.normalized * parent.target.stats.Speed);
+        var startDir = Vector2.zero;
+        var angleDivision = (Mathf.PI * 2) / bulletsPerShot;
+        var radius = 1.75f;
+
+        for (int i = 1; i <= bulletsPerShot; ++i)
+        {
+            var x = radius * Mathf.Cos(angleDivision * i) + startDir.x;
+            var y = radius * Mathf.Sin(angleDivision * i) + startDir.y;
+            var direction = new Vector2(x, y);
+            var bulletVelocity = direction * bulletSpeed;
+
+            // Create origin bullet
+            var centerBullet =
+                Instantiate(bulletPrefab
+                    , new Vector3(bulletSpawn.x, bulletSpawn.y, -0.5f)
+                    , Quaternion.identity);
+
+            var bulletComp = centerBullet.GetComponent<Bullet>();
+            bulletComp.GetComponent<Collider2D>().tag = "Enemy";
+            bulletComp.RB = centerBullet.GetComponent<Rigidbody2D>();
+            bulletComp.team = SceneDirector.Teams.Enemy;
+            bulletComp.BulletRangeLeft = bulletComp.BulletRange;
+            bulletComp.RB.velocity = (bulletVelocity + bulletComp.RB.velocity);
+        }
         
+        if(parent.type == Enemy.eType.slime)
+        {
+            Destroy(parent.gameObject);
+        }
+
     }
 
     public void PatternWave()
+    {
+        
+    }
+
+    public void PatternEgg()
+    {
+        
+    }
+
+    public void PatternSkele()
+    {
+        var trans = parent.GetComponentInChildren<RectTransform>();
+        Vector2 pos = gameObject.transform.position;
+        Vector2 bulletSpawn = trans.position;
+        Vector2 playerPos = parent.target.gameObject.transform.position;
+        playerPos += (parent.target.rb.velocity.normalized * parent.target.stats.Speed);
+        var direction = (playerPos - pos).normalized;
+        var bulletVelocity = direction * bulletSpeed;
+
+        // Create origin bullet
+        var centerBullet =
+            Instantiate(bulletPrefab
+                , new Vector3(bulletSpawn.x, bulletSpawn.y, -0.5f)
+                , Quaternion.identity);
+        var rotateVector = Vector3.Angle(bulletSpawn, playerPos);
+
+        var rot = centerBullet.transform.rotation.eulerAngles;
+        centerBullet.transform.rotation =
+            Quaternion.Euler(bulletVelocity.x, bulletVelocity.y, 0.0f);
+
+
+        var bulletComp = centerBullet.GetComponent<Bullet>();
+        bulletComp.GetComponent<Collider2D>().tag = "Enemy";
+        bulletComp.RB = centerBullet.GetComponent<Rigidbody2D>();
+        bulletComp.team = SceneDirector.Teams.Enemy;
+        bulletComp.BulletRangeLeft = bulletComp.BulletRange;
+        bulletComp.RB.velocity = (bulletVelocity + bulletComp.RB.velocity);
+    }
+
+    public void PatternBoss()
     {
         
     }

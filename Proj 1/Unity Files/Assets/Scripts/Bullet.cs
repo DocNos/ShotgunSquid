@@ -40,16 +40,18 @@ public class Bullet : MonoBehaviour
                          || wallTile.type == Tile.Type.outerWall))
         {
             Destroy(gameObject);
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<Collider2D>().enabled = false;
         }
         ////No friendly fire
-        if (col.isTrigger || col.tag == team.ToString()
+        if (col.tag == team.ToString()
             || col.GetComponent<Bullet>())
         {
             return;
         }
         
+        if(col.tag == SceneDirector.Teams.Player.ToString())
+        {
+            Destroy(gameObject);
+        }
         
     }
 

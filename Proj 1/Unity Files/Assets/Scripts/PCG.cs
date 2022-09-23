@@ -72,8 +72,11 @@ public class PCG : MonoBehaviour
 		tilePrefabs.Add(Tile.Type.exitPathE, Resources.Load<GameObject>("Prefabs/DungeonExitPathEast"));
 		tilePrefabs[Tile.Type.exitPathE].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
 
-		enemyPrefabs.Add(Enemy.eType.ant, Resources.Load<GameObject>("Prefabs/antEnemy"));
-		enemyPrefabs[Enemy.eType.ant].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+		enemyPrefabs.Add(Enemy.eType.antMedium, Resources.Load<GameObject>("Prefabs/healerEnemy"));
+		enemyPrefabs[Enemy.eType.antMedium].transform.localScale = new Vector3(GridSize * 1.25f, GridSize * 1.25f, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.antEasy, Resources.Load<GameObject>("Prefabs/antEnemy"));
+		enemyPrefabs[Enemy.eType.antEasy].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
 
 		enemyPrefabs.Add(Enemy.eType.bomb, Resources.Load<GameObject>("Prefabs/healerEnemy"));
 		enemyPrefabs[Enemy.eType.bomb].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
@@ -81,8 +84,17 @@ public class PCG : MonoBehaviour
 		enemyPrefabs.Add(Enemy.eType.healer, Resources.Load<GameObject>("Prefabs/bombEnemy"));
 		enemyPrefabs[Enemy.eType.healer].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
 
+		enemyPrefabs.Add(Enemy.eType.slime, Resources.Load<GameObject>("Prefabs/slimeEnemy"));
+		enemyPrefabs[Enemy.eType.slime].transform.localScale = new Vector3(GridSize / 2, GridSize / 2, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.chicken, Resources.Load<GameObject>("Prefabs/chickenEnemy"));
+		enemyPrefabs[Enemy.eType.chicken].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+
+		enemyPrefabs.Add(Enemy.eType.skeleton, Resources.Load<GameObject>("Prefabs/skeletonEnemy"));
+		enemyPrefabs[Enemy.eType.skeleton].transform.localScale = new Vector3(GridSize, GridSize, 1.0f);
+
 		enemyPrefabs.Add(Enemy.eType.boss, Resources.Load<GameObject>("Prefabs/boss"));
-		enemyPrefabs[Enemy.eType.boss].transform.localScale = new Vector3(GridSize * 1.5f, GridSize * 1.5f , 1.0f);
+		enemyPrefabs[Enemy.eType.boss].transform.localScale = new Vector3(GridSize * 3.0f, GridSize * 3.0f , 1.0f);
 
 		//Load all the prefabs we need for map generation (note that these must be in a "Resources" folder)
 		Prefabs = new Dictionary<string, GameObject>();
@@ -198,10 +210,21 @@ public class PCG : MonoBehaviour
 			randW = (randW % 2 == 0) ? (++randW) : (randW);
 			randH = (randH % 2 == 0) ? (++randH) : (randH);
 			var randTile = GetTile(randIndX, randIndY);
-			SpawnRoom(randTile.GetComponent<Tile>(), randW, randH);
+			SpawnEnemyRoom(randTile.GetComponent<Tile>(), randW, randH);
 
 		}
 		
+		//for(int i = 0; i < 10; ++i)
+		//{
+		//	var randW = 7;
+		//	var randH = 5;
+		//	var randIndX = RNG.Next(0, MaxMapSize - 1);
+		//	var randIndY = RNG.Next(0, MaxMapSize - 1);
+		//	randW = (randW % 2 == 0) ? (++randW) : (randW);
+		//	randH = (randH % 2 == 0) ? (++randH) : (randH);
+		//	var randTile = GetTile(randIndX, randIndY);
+		//	SpawnEnemyRoom(randTile.GetComponent<Tile>(), randW, randH);
+		//}
 
 
 		while(branchTiles.Count > 0)
@@ -541,6 +564,230 @@ public class PCG : MonoBehaviour
 		return dir;
 	}
 
+
+	public Tile SpawnEnemyRoom(Tile center, int roomWidth, int roomHeight)
+	{
+		GameObject curr = center.gameObject;
+		int hIndex = center.horzIndex;
+		int vIndex = center.vertIndex;
+		// Corners
+		int minH = (hIndex - (roomWidth / 2) + 1);
+		int maxH = (hIndex + (roomWidth / 2) + 1);
+		int minV = (vIndex - (roomHeight / 2) + 1);
+		int maxV = (vIndex + (roomHeight / 2) + 1);
+		// Room boundaries
+		for (int i = 0; i < roomWidth; ++i)
+		{
+			int top = minH + i;
+			// North and South Walls
+			if (CheckIndex(top, minV, false))
+			{
+				curr = CreateTileIndex(Tile.Type.wall, top, minV, curr);
+			}
+			if (CheckIndex(top, maxV, false))
+			{
+				curr = CreateTileIndex(Tile.Type.wall, top, maxV, curr);
+			}
+
+		}
+		for (int i = 0; i < roomHeight; ++i)
+		{
+			int v = minV + i;
+			// East and West walls
+			if (CheckIndex(minH, v, false))
+			{
+				curr = CreateTileIndex(Tile.Type.wall, minH, v, curr);
+			}
+			if (CheckIndex(maxH, v, false))
+			{
+				curr = CreateTileIndex(Tile.Type.wall, maxH, v, curr);
+			}
+		}
+
+		// Fill room with floor
+		Tile.Type floorType =
+			(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty)
+								   : (Tile.Type.floor);
+		var fillY = minV + 1;
+		var fillX = minH + 1;
+		for (int i = 0; i < roomWidth - 1; ++i)
+		{
+			for (int j = 0; j < roomHeight - 1; ++j)
+			{
+				if (CheckIndex(fillX + i, fillY + j, false))
+				{
+					CreateTileIndex_Ignore(floorType, fillX + i, fillY + j);
+				}
+				floorType =
+					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty)
+										   : (Tile.Type.floor);
+
+			}
+		}
+
+
+		// If center vert index < MaxMapWidth / 2
+		//	branch off north over south, else vice versa
+		// if center horz index < MaxMapWidth / 2
+		//	Branch off east over west, else vice versa
+		var tile = curr.GetComponent<Tile>();
+		var indexY = 0;
+		var indexX = 0;
+		int variantX = RNG.Next(2, (roomWidth / 2));
+		int variantY = RNG.Next(2, (roomHeight / 2));
+
+		if (center.vertIndex < (MaxMapSize / 2))
+		{
+			indexY = center.vertIndex + (roomHeight / 2);
+		}
+		else
+		{
+			indexY = center.vertIndex - (roomHeight / 2);
+			variantY = -variantY;
+
+		}
+		if (center.horzIndex < (MaxMapSize / 2))
+		{
+			indexX = center.horzIndex + (roomWidth / 2);
+		}
+		else
+		{
+			indexX = center.horzIndex - (roomWidth / 2);
+			variantX = -variantX;
+		}
+		++indexY;
+		++indexX;
+
+		// Randomly use dirty floor texture
+		floorType =
+			(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
+
+		var branchTile0 = allTiles[indexX, center.vertIndex];
+		Destroy(branchTile0);
+		branchTiles.Add
+		(CreateTileIndex_Ignore(floorType
+		, indexX, center.vertIndex).GetComponent<Tile>());
+		// Doorway N/S
+		if (variantY < 0)
+		{
+			for (int i = variantY; i < 0; ++i)
+			{
+				floorType =
+					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
+				var branchTile1 = allTiles[indexX, center.vertIndex + i];
+				var newBranch = CreateTileIndex_Ignore(floorType
+						, indexX, center.vertIndex + i)
+					.GetComponent<Tile>();
+				if (AddBranch(newBranch))
+				{
+					Destroy(branchTile1);
+				}
+
+			}
+		}
+		else
+		{
+			for (int i = 0; i < variantY; ++i)
+			{
+				floorType =
+					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
+				var branchTile1 = allTiles[indexX, center.vertIndex + i];
+				var newBranch = CreateTileIndex_Ignore(floorType
+						, indexX, center.vertIndex + i)
+					.GetComponent<Tile>();
+				if (AddBranch(newBranch))
+				{
+					Destroy(branchTile1);
+				}
+
+
+			}
+		}
+
+		floorType =
+			(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
+		var branchTile2 = allTiles[center.horzIndex, indexY];
+		var newBranch0 = CreateTileIndex_Ignore(floorType
+			, center.horzIndex, indexY).GetComponent<Tile>();
+		if (AddBranch(newBranch0))
+		{
+			Destroy(branchTile2);
+		}
+
+
+
+		//Doorway W/E
+		if (variantX < 0)
+		{
+			for (int i = variantX; i < 0; ++i)
+			{
+				floorType =
+					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
+				var branchTile3 = allTiles[center.horzIndex + i, indexY];
+				var newBranch = CreateTileIndex_Ignore(floorType, center.horzIndex + i, indexY)
+					.GetComponent<Tile>();
+				if (AddBranch(newBranch))
+				{
+					Destroy(branchTile3);
+				}
+
+
+			}
+		}
+		else
+		{
+			for (int i = 0; i < variantX; ++i)
+			{
+				floorType =
+					(RNG.Next(0, 10) == 1) ? (Tile.Type.floorDirty) : (Tile.Type.floor);
+				var branchTile3 = allTiles[center.horzIndex + i, indexY];
+				var newBranch = CreateTileIndex_Ignore(floorType, center.horzIndex + i, indexY).GetComponent<Tile>();
+				if (AddBranch(newBranch))
+				{
+					Destroy(branchTile3);
+				}
+
+			}
+		}
+
+		CreateRandomEnemy(center.transform.position);
+
+		//var nextTile = GetTile(center.horzIndex + 1, center.vertIndex);
+		//
+		//randEnemy = RNG.Next(0, 9);
+		//switch (randEnemy)
+		//{
+		//	case (0): type = Enemy.eType.slime; break;
+		//	case (1): type = Enemy.eType.antEasy; break;
+		//	case (2): type = Enemy.eType.antMedium; break;
+		//	case (3): type = Enemy.eType.chicken; break;
+		//	case (4): type = Enemy.eType.skeleton; break;
+		//	case (5): type = Enemy.eType.boss; break;
+		//}
+		//
+		//
+		//nextTile = GetTile(center.horzIndex - 1, center.vertIndex);
+		//
+		//randEnemy = RNG.Next(0, 9);
+		//switch (randEnemy)
+		//{
+		//	case (0): type = Enemy.eType.slime; break;
+		//	case (1): type = Enemy.eType.antEasy; break;
+		//	case (2): type = Enemy.eType.antMedium; break;
+		//	case (3): type = Enemy.eType.chicken; break;
+		//	case (4): type = Enemy.eType.skeleton; break;
+		//	case (5): type = Enemy.eType.boss; break;
+		//}
+		//
+		//createEnemy(type, nextTile.transform.position);
+
+
+
+
+
+		return tile;
+	}
+
 	// Spawn a room from center tile
 	public Tile SpawnRoom(Tile center, int roomWidth, int roomHeight)
 	{
@@ -726,13 +973,6 @@ public class PCG : MonoBehaviour
 				
 			}
 		}
-
-		if(center != playerSpawnTile)
-		{
-			createEnemy(Enemy.eType.ant, center.gameObject.transform.position);
-		}
-		
-		
 		
 		return tile;
 	}
@@ -747,7 +987,22 @@ public class PCG : MonoBehaviour
 		return enemy.GetComponent<Enemy>();
 	}
 
+	public void CreateRandomEnemy(Vector3 pos)
+	{
+		Enemy.eType type = Enemy.eType.slime;
+		var randEnemy = RNG.Next(0, 9);
+		switch (randEnemy)
+		{
+			case (0): type = Enemy.eType.slime; break;
+			case (1): type = Enemy.eType.antEasy; break;
+			case (2): type = Enemy.eType.antMedium; break;
+			case (3): type = Enemy.eType.chicken; break;
+			case (4): type = Enemy.eType.skeleton; break;
+			case (5): type = Enemy.eType.boss; break;
+		}
 
+		createEnemy(type, pos);
+	}
 	/////////////////////////////////////////////////////////////
 	/// UTILITY
 
